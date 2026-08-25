@@ -1,0 +1,312 @@
+{"kind":"deck","id":"pr/5bxex5","name":"Deck"}
+{"kind":"layout","layoutId":"6eb28a69-4856-444d-8dd5-91af6fb0e69b","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"c0cbaba8-3bff-4105-8441-2698e3841fd2","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/jklw0y","slide":1,"title":"iQOO HACKATHON 2026  •  TECHNICAL SELECTION DECK","textShapes":19}
+{"kind":"textbox","id":"sh/dc7atofy","slide":1,"text":"iQOO HACKATHON 2026  •  TECHNICAL SELECTION DECK","textPreview":"iQOO HACKATHON 2026  •  TECHNICAL SELECTION DECK","textChars":48,"textLines":1,"bbox":[70,54,620,22]}
+{"kind":"textbox","id":"sh/q9gri9wn","slide":1,"text":"DealTwin","textPreview":"DealTwin","textChars":8,"textLines":1,"bbox":[70,130,520,82]}
+{"kind":"textbox","id":"sh/rapsrexs","slide":1,"text":"A local-first evidence reconciliation engine for consumer transactions.","textPreview":"A local-first evidence reconciliation engine for consumer transactions.","textChars":71,"textLines":1,"bbox":[70,218,610,76]}
+{"kind":"textbox","id":"sh/0fy9ojep","slide":1,"text":"It converts advertisements, conversations and final paperwork into a source-linked Promise Ledger—before payment or signature.","textPreview":"It converts advertisements, conversations and final paperwork into a source-linked Promise Ledger—before payment or signature.","textChars":126,"textLines":1,"bbox":[70,312,560,80]}
+{"kind":"shape","id":"sh/1grahofa","slide":1,"bbox":[70,430,140,30]}
+{"kind":"textbox","id":"sh/edgrm9wj","slide":1,"text":"EXPLAINABLE","textPreview":"EXPLAINABLE","textChars":11,"textLines":1,"bbox":[80,436,120,18]}
+{"kind":"shape","id":"sh/fepsfex4","slide":1,"bbox":[220,430,140,30]}
+{"kind":"textbox","id":"sh/o3its3el","slide":1,"text":"PHONE-FIRST","textPreview":"PHONE-FIRST","textChars":11,"textLines":1,"bbox":[230,436,120,18]}
+{"kind":"shape","id":"sh/p4ral8f6","slide":1,"bbox":[370,430,120,30]}
+{"kind":"textbox","id":"sh/lsjixkvm","slide":1,"text":"LOCAL AI","textPreview":"LOCAL AI","textChars":8,"textLines":1,"bbox":[380,436,100,18]}
+{"kind":"textbox","id":"sh/0ra1ofu1","slide":1,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[70,620,240,28]}
+{"kind":"shape","id":"sh/zq10vadg","slide":1,"bbox":[715,82,500,545]}
+{"kind":"textbox","id":"sh/ypsjm5cv","slide":1,"text":"VERIFICATION PIPELINE","textPreview":"VERIFICATION PIPELINE","textChars":21,"textLines":1,"bbox":[752,116,420,22]}
+{"kind":"textbox","id":"sh/9g3i1kvi","slide":1,"text":"Evidence becomes a testable claim—not a summary.","textPreview":"Evidence becomes a testable claim—not a summary.","textChars":48,"textLines":1,"bbox":[752,148,400,54]}
+{"kind":"shape","id":"sh/8fu1sfux","slide":1,"bbox":[752,236,415,76]}
+{"kind":"textbox","id":"sh/nel0zadc","slide":1,"text":"01  CAPTURE","textPreview":"01  CAPTURE","textChars":11,"textLines":1,"bbox":[774,249,160,20]}
+{"kind":"textbox","id":"sh/mdsjq5cr","slide":1,"text":"Camera • screenshots • consented audio • PDF","textPreview":"Camera • screenshots • consented audio • PDF","textChars":44,"textLines":1,"bbox":[774,275,365,25]}
+{"kind":"textbox","id":"sh/pkzip0ve","slide":1,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[935,311,50,24]}
+{"kind":"shape","id":"sh/ojqhgvut","slide":1,"bbox":[752,334,415,76]}
+{"kind":"textbox","id":"sh/g3u1wv2p","slide":1,"text":"02  RECONCILE","textPreview":"02  RECONCILE","textChars":13,"textLines":1,"bbox":[774,347,160,20]}
+{"kind":"textbox","id":"sh/h43i503a","slide":1,"text":"Structured claims • evidence graph • source authority","textPreview":"Structured claims • evidence graph • source authority","textChars":53,"textLines":1,"bbox":[774,373,365,25]}
+{"kind":"textbox","id":"sh/u1cjulkj","slide":1,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[935,409,50,24]}
+{"kind":"shape","id":"sh/f2l03ql4","slide":1,"bbox":[752,432,415,76]}
+{"kind":"textbox","id":"sh/47e10v2l","slide":1,"text":"03  VERIFY","textPreview":"03  VERIFY","textChars":10,"textLines":1,"bbox":[774,445,160,20]}
+{"kind":"textbox","id":"sh/psni9036","slide":1,"text":"Constraint checks • true-cost math • traceable outcome","textPreview":"Constraint checks • true-cost math • traceable outcome","textChars":54,"textLines":1,"bbox":[774,471,365,25]}
+{"kind":"textbox","id":"sh/25cjy5kf","slide":1,"text":"OUTPUT  Promise Ledger + true payable cost + clarification card","textPreview":"OUTPUT  Promise Ledger + true payable cost + clarification card","textChars":63,"textLines":1,"bbox":[752,548,420,34]}
+{"kind":"notes","id":"nt/jklw0y","slide":1,"text":""}
+{"kind":"slide","id":"sl/52q3ke","slide":2,"title":"TEAM ANKOR","textShapes":26}
+{"kind":"textbox","id":"sh/rmd8ved4","slide":2,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/cnmp4ju9","slide":2,"text":"PROBLEM MODEL","textPreview":"PROBLEM MODEL","textChars":13,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/dovqxovu","slide":2,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/ep476tcf","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/zqx8zed0","slide":2,"text":"THE TECHNICAL FAILURE IS STATE DIVERGENCE","textPreview":"THE TECHNICAL FAILURE IS STATE DIVERGENCE","textChars":41,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/0r698jul","slide":2,"text":"The promise and the contract evolve in separate, incompatible channels.","textPreview":"The promise and the contract evolve in separate, incompatible channels.","textChars":71,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"textbox","id":"sh/1sfq1ov6","slide":2,"text":"DealTwin treats this as an evidence reconciliation problem—not as generic document summarization.","textPreview":"DealTwin treats this as an evidence reconciliation problem—not as generic document summarization.","textChars":97,"textLines":1,"bbox":[72,226,1080,48]}
+{"kind":"textbox","id":"sh/utk7upwb","slide":2,"text":"PRE-COMMITMENT STATE","textPreview":"PRE-COMMITMENT STATE","textChars":20,"textLines":1,"bbox":[72,300,290,22]}
+{"kind":"shape","id":"sh/vut8nudw","slide":2,"bbox":[72,333,260,88]}
+{"kind":"shape","id":"sh/3i5snils","slide":2,"bbox":[72,333,5,88]}
+{"kind":"textbox","id":"sh/2hwrudkn","slide":2,"text":"Advertisement","textPreview":"Advertisement","textChars":13,"textLines":1,"bbox":[90,348,228,24]}
+{"kind":"textbox","id":"sh/pknaps3y","slide":2,"text":"₹50,000 • no-cost EMI","textPreview":"₹50,000 • no-cost EMI","textChars":21,"textLines":1,"bbox":[90,379,228,30]}
+{"kind":"shape","id":"sh/4je9wn2d","slide":2,"bbox":[72,437,260,88]}
+{"kind":"shape","id":"sh/felsjilw","slide":2,"bbox":[72,437,5,88]}
+{"kind":"textbox","id":"sh/udcrqdkb","slide":2,"text":"Seller explanation","textPreview":"Seller explanation","textChars":18,"textLines":1,"bbox":[90,452,228,24]}
+{"kind":"textbox","id":"sh/hgnals32","slide":2,"text":"Free insurance • 2-year warranty","textPreview":"Free insurance • 2-year warranty","textChars":32,"textLines":1,"bbox":[90,483,228,30]}
+{"kind":"shape","id":"sh/gfu9sn2h","slide":2,"bbox":[72,541,260,88]}
+{"kind":"shape","id":"sh/7qlsfyl0","slide":2,"bbox":[72,541,5,88]}
+{"kind":"textbox","id":"sh/6pcrmtkf","slide":2,"text":"Chat / screenshot","textPreview":"Chat / screenshot","textChars":17,"textLines":1,"bbox":[90,556,228,24]}
+{"kind":"textbox","id":"sh/alsbyto7","slide":2,"text":"Offer validity • conditions","textPreview":"Offer validity • conditions","textChars":27,"textLines":1,"bbox":[90,587,228,30]}
+{"kind":"textbox","id":"sh/vm1sry5s","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[348,425,42,30]}
+{"kind":"shape","id":"sh/wnat036d","slide":2,"bbox":[400,340,300,255]}
+{"kind":"textbox","id":"sh/xojat8ny","slide":2,"text":"NORMALIZATION GAP","textPreview":"NORMALIZATION GAP","textChars":17,"textLines":1,"bbox":[430,370,240,24]}
+{"kind":"textbox","id":"sh/i9cb2do3","slide":2,"text":"Same concept, different wording\nMissing units and conditions\nConflicting timestamps\nUnequal source authority","textPreview":"Same concept, different wording | Missing units and conditions | Conflicting timestamps | Unequal source authority","textChars":108,"textLines":4,"bbox":[430,419,240,116]}
+{"kind":"shape","id":"sh/jalsvi5o","slide":2,"bbox":[470,548,160,30]}
+{"kind":"textbox","id":"sh/kbut4n69","slide":2,"text":"NO SHARED SCHEMA","textPreview":"NO SHARED SCHEMA","textChars":16,"textLines":1,"bbox":[480,554,140,18]}
+{"kind":"textbox","id":"sh/5c3ax8nu","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[716,425,42,30]}
+{"kind":"textbox","id":"sh/6dcb6dof","slide":2,"text":"FINAL COMMITMENT STATE","textPreview":"FINAL COMMITMENT STATE","textChars":22,"textLines":1,"bbox":[770,300,360,22]}
+{"kind":"shape","id":"sh/7elczi50","slide":2,"bbox":[770,333,380,88]}
+{"kind":"shape","id":"sh/h87e5c72","slide":2,"bbox":[770,333,5,88]}
+{"kind":"textbox","id":"sh/g7edw7qh","slide":2,"text":"Invoice + KFS","textPreview":"Invoice + KFS","textChars":13,"textLines":1,"bbox":[788,348,348,24]}
+{"kind":"textbox","id":"sh/f65w3mpw","slide":2,"text":"₹999 fee • cash discount removed","textPreview":"₹999 fee • cash discount removed","textChars":32,"textLines":1,"bbox":[788,379,348,30]}
+{"kind":"shape","id":"sh/u5wvuh8b","slide":2,"bbox":[770,437,380,88]}
+{"kind":"shape","id":"sh/pc7e9w7y","slide":2,"bbox":[770,437,5,88]}
+{"kind":"textbox","id":"sh/obyd0rqt","slide":2,"text":"Warranty / policy","textPreview":"Warranty / policy","textChars":17,"textLines":1,"bbox":[788,452,348,24]}
+{"kind":"textbox","id":"sh/3apw7mp8","slide":2,"text":"Coverage differs from the verbal claim","textPreview":"Coverage differs from the verbal claim","textChars":38,"textLines":1,"bbox":[788,483,348,30]}
+{"kind":"shape","id":"sh/29gvyh8n","slide":2,"bbox":[770,541,380,62]}
+{"kind":"textbox","id":"sh/d0redw7a","slide":2,"text":"DEMO DELTA","textPreview":"DEMO DELTA","textChars":10,"textLines":1,"bbox":[792,555,120,18]}
+{"kind":"textbox","id":"sh/czyd4rqp","slide":2,"text":"₹2,148 above expected cost","textPreview":"₹2,148 above expected cost","textChars":26,"textLines":1,"bbox":[920,551,205,28]}
+{"kind":"textbox","id":"sh/87mpsze9","slide":2,"text":"Illustrative hackathon scenario","textPreview":"Illustrative hackathon scenario","textChars":31,"textLines":1,"bbox":[770,618,380,18]}
+{"kind":"notes","id":"nt/52q3ke","slide":2,"text":""}
+{"kind":"slide","id":"sl/rglkku","slide":3,"title":"TEAM ANKOR","textShapes":39}
+{"kind":"textbox","id":"sh/8b2dszyt","slide":3,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/7a9czux8","slide":3,"text":"END-TO-END WORKFLOW","textPreview":"END-TO-END WORKFLOW","textChars":19,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/m90vqpgn","slide":3,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/loruxkf2","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/knidozyx","slide":3,"text":"EVERY OUTCOME REMAINS LINKED TO THE EVIDENCE THAT PRODUCED IT","textPreview":"EVERY OUTCOME REMAINS LINKED TO THE EVIDENCE THAT PRODUCED IT","textChars":61,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/zm9cvuhc","slide":3,"text":"Capture → extract → reconcile → verify → act, with human review at low confidence.","textPreview":"Capture → extract → reconcile → verify → act, with human review at low confidence.","textChars":82,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"textbox","id":"sh/yl0vmpgr","slide":3,"text":"USER / DEVICE","textPreview":"USER / DEVICE","textChars":13,"textLines":1,"bbox":[72,334,165,24]}
+{"kind":"shape","id":"sh/xkrutkz6","slide":3,"bbox":[230,304,955,1]}
+{"kind":"textbox","id":"sh/cjitkfyl","slide":3,"text":"ON-DEVICE INTELLIGENCE","textPreview":"ON-DEVICE INTELLIGENCE","textChars":22,"textLines":1,"bbox":[72,436,165,24]}
+{"kind":"shape","id":"sh/apw3uhcv","slide":3,"bbox":[230,406,955,1]}
+{"kind":"textbox","id":"sh/ba54nmdg","slide":3,"text":"VERIFIABLE OUTPUT","textPreview":"VERIFIABLE OUTPUT","textChars":17,"textLines":1,"bbox":[72,538,165,24]}
+{"kind":"shape","id":"sh/wbelwru1","slide":3,"bbox":[230,508,955,1]}
+{"kind":"textbox","id":"sh/xcnmpwvm","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[400,344,36,30]}
+{"kind":"textbox","id":"sh/mlc3qhcz","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[588,344,36,30]}
+{"kind":"textbox","id":"sh/nmlkjmdk","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[776,344,36,30]}
+{"kind":"textbox","id":"sh/onulsru5","slide":3,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[964,344,36,30]}
+{"kind":"shape","id":"sh/9onmlwvq","slide":3,"bbox":[250,318,158,122]}
+{"kind":"shape","id":"sh/ehc3mxc3","slide":3,"bbox":[264,330,34,30]}
+{"kind":"textbox","id":"sh/zilkf2d8","slide":3,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[274,336,14,18]}
+{"kind":"textbox","id":"sh/3mh0nyt0","slide":3,"text":"CAPTURE","textPreview":"CAPTURE","textChars":7,"textLines":1,"bbox":[264,369,130,22]}
+{"kind":"textbox","id":"sh/2l8judsv","slide":3,"text":"Camera, files, consented audio","textPreview":"Camera, files, consented audio","textChars":30,"textLines":1,"bbox":[264,397,130,32]}
+{"kind":"shape","id":"sh/pozip8b6","slide":3,"bbox":[438,318,158,122]}
+{"kind":"shape","id":"sh/4nq1w3al","slide":3,"bbox":[452,330,34,30]}
+{"kind":"textbox","id":"sh/rq10ritc","slide":3,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[462,336,14,18]}
+{"kind":"textbox","id":"sh/qpsjydsr","slide":3,"text":"EXTRACT","textPreview":"EXTRACT","textChars":7,"textLines":1,"bbox":[452,369,130,22]}
+{"kind":"textbox","id":"sh/dsjitsbi","slide":3,"text":"OCR + structured claim JSON","textPreview":"OCR + structured claim JSON","textChars":27,"textLines":1,"bbox":[452,397,130,32]}
+{"kind":"shape","id":"sh/cra10nax","slide":3,"bbox":[626,318,158,122]}
+{"kind":"shape","id":"sh/7ux0fets","slide":3,"bbox":[640,330,34,30]}
+{"kind":"textbox","id":"sh/6tozmtsn","slide":3,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[650,336,14,18]}
+{"kind":"textbox","id":"sh/wzmxgfq5","slide":3,"text":"RECONCILE","textPreview":"RECONCILE","textChars":9,"textLines":1,"bbox":[640,369,130,22]}
+{"kind":"textbox","id":"sh/x0vypkrq","slide":3,"text":"Candidate match + source authority","textPreview":"Candidate match + source authority","textChars":34,"textLines":1,"bbox":[640,397,130,32]}
+{"kind":"shape","id":"sh/axkfep8f","slide":3,"bbox":[814,318,158,122]}
+{"kind":"shape","id":"sh/bytgna9k","slide":3,"bbox":[828,330,34,30]}
+{"kind":"textbox","id":"sh/ov2xcfq9","slide":3,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[838,336,14,18]}
+{"kind":"textbox","id":"sh/9wbylkru","slide":3,"text":"VERIFY","textPreview":"VERIFY","textChars":6,"textLines":1,"bbox":[828,369,130,22]}
+{"kind":"textbox","id":"sh/m9kfa583","slide":3,"text":"Rules + deterministic cost engine","textPreview":"Rules + deterministic cost engine","textChars":33,"textLines":1,"bbox":[828,397,130,32]}
+{"kind":"shape","id":"sh/natwja9o","slide":3,"bbox":[1002,318,158,122]}
+{"kind":"shape","id":"sh/8r6xozqd","slide":3,"bbox":[1016,330,34,30]}
+{"kind":"textbox","id":"sh/tsfyx4ry","slide":3,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1026,336,14,18]}
+{"kind":"textbox","id":"sh/pc7upw7a","slide":3,"text":"ACT","textPreview":"ACT","textChars":3,"textLines":1,"bbox":[1016,369,130,22]}
+{"kind":"textbox","id":"sh/4bydgr6p","slide":3,"text":"Ledger + neutral clarification","textPreview":"Ledger + neutral clarification","textChars":30,"textLines":1,"bbox":[1016,397,130,32]}
+{"kind":"shape","id":"sh/3apcn6pk","slide":3,"bbox":[252,456,142,30]}
+{"kind":"textbox","id":"sh/29gve1oz","slide":3,"text":"BUNDLED OCR","textPreview":"BUNDLED OCR","textChars":11,"textLines":1,"bbox":[262,462,122,18]}
+{"kind":"shape","id":"sh/dgrutg7m","slide":3,"bbox":[420,456,164,30]}
+{"kind":"textbox","id":"sh/cfidkb61","slide":3,"text":"LOCAL OPEN MODEL","textPreview":"LOCAL OPEN MODEL","textChars":16,"textLines":1,"bbox":[430,462,144,18]}
+{"kind":"shape","id":"sh/repcr6pg","slide":3,"bbox":[610,456,184,30]}
+{"kind":"textbox","id":"sh/qdgvi1ov","slide":3,"text":"EMBEDDING RETRIEVAL","textPreview":"EMBEDDING RETRIEVAL","textChars":19,"textLines":1,"bbox":[620,462,164,18]}
+{"kind":"shape","id":"sh/14ruxg7i","slide":3,"bbox":[820,456,140,30]}
+{"kind":"textbox","id":"sh/03idob6x","slide":3,"text":"RULE ENGINE","textPreview":"RULE ENGINE","textChars":11,"textLines":1,"bbox":[830,462,120,18]}
+{"kind":"shape","id":"sh/ydsj2t0j","slide":3,"bbox":[986,456,174,30]}
+{"kind":"textbox","id":"sh/ze10vy1o","slide":3,"text":"CONFIDENCE GATE","textPreview":"CONFIDENCE GATE","textChars":15,"textLines":1,"bbox":[996,462,154,18]}
+{"kind":"textbox","id":"sh/kfa14ji9","slide":3,"text":"If confidence < threshold → mark UNVERIFIABLE and request user confirmation","textPreview":"If confidence < threshold → mark UNVERIFIABLE and request user confirmation","textChars":75,"textLines":1,"bbox":[332,508,746,24]}
+{"kind":"textbox","id":"sh/l0jixoju","slide":3,"text":"KEPT","textPreview":"KEPT","textChars":4,"textLines":1,"bbox":[300,562,100,20]}
+{"kind":"textbox","id":"sh/m1sj6t0f","slide":3,"text":"CHANGED","textPreview":"CHANGED","textChars":7,"textLines":1,"bbox":[452,562,120,20]}
+{"kind":"textbox","id":"sh/7210zy10","slide":3,"text":"MISSING","textPreview":"MISSING","textChars":7,"textLines":1,"bbox":[622,562,120,20]}
+{"kind":"textbox","id":"sh/83u183il","slide":3,"text":"CONTRADICTED","textPreview":"CONTRADICTED","textChars":12,"textLines":1,"bbox":[792,562,150,20]}
+{"kind":"textbox","id":"sh/943i18j6","slide":3,"text":"UNVERIFIABLE","textPreview":"UNVERIFIABLE","textChars":12,"textLines":1,"bbox":[1000,562,150,20]}
+{"kind":"textbox","id":"sh/u5cjad0b","slide":3,"text":"Consent boundary: audio is opt-in; no background recording.","textPreview":"Consent boundary: audio is opt-in; no background recording.","textChars":59,"textLines":1,"bbox":[72,636,650,22]}
+{"kind":"notes","id":"nt/rglkku","slide":3,"text":""}
+{"kind":"slide","id":"sl/0e0bjs","slide":4,"title":"TEAM ANKOR","textShapes":29}
+{"kind":"textbox","id":"sh/kbudgzix","slide":4,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/ja1wnuhc","slide":4,"text":"SYSTEM ARCHITECTURE","textPreview":"SYSTEM ARCHITECTURE","textChars":19,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/y9svep0r","slide":4,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/x8jel4z6","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/w7adczil","slide":4,"text":"THE PHONE CONTAINS THE TRUST BOUNDARY; THE CLOUD IS OPTIONAL","textPreview":"THE PHONE CONTAINS THE TRUST BOUNDARY; THE CLOUD IS OPTIONAL","textChars":60,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/b61wjuh0","slide":4,"text":"A modular pipeline isolates probabilistic extraction from deterministic financial verification.","textPreview":"A modular pipeline isolates probabilistic extraction from deterministic financial verification.","textChars":95,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"textbox","id":"sh/a5svap0f","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[323,400,32,30]}
+{"kind":"textbox","id":"sh/h4nexoza","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[555,400,32,30]}
+{"kind":"textbox","id":"sh/g3exoji5","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[787,400,32,30]}
+{"kind":"textbox","id":"sh/m50vm5cr","slide":4,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[1019,400,32,30]}
+{"kind":"textbox","id":"sh/769wfadc","slide":4,"text":"INPUT ADAPTERS","textPreview":"INPUT ADAPTERS","textChars":14,"textLines":1,"bbox":[72,300,180,20]}
+{"kind":"shape","id":"sh/87idofuh","slide":4,"bbox":[72,330,132,30]}
+{"kind":"textbox","id":"sh/98rehkv2","slide":4,"text":"CameraX","textPreview":"CameraX","textChars":7,"textLines":1,"bbox":[82,336,112,18]}
+{"kind":"shape","id":"sh/yhgvilcf","slide":4,"bbox":[217,330,132,30]}
+{"kind":"textbox","id":"sh/z2pcbqd0","slide":4,"text":"Screenshot share","textPreview":"Screenshot share","textChars":16,"textLines":1,"bbox":[227,336,112,18]}
+{"kind":"shape","id":"sh/k3ydkvul","slide":4,"bbox":[362,330,132,30]}
+{"kind":"textbox","id":"sh/l4red0v6","slide":4,"text":"PDF / image","textPreview":"PDF / image","textChars":11,"textLines":1,"bbox":[372,336,112,18]}
+{"kind":"shape","id":"sh/idkvupcz","slide":4,"bbox":[507,330,132,30]}
+{"kind":"textbox","id":"sh/jytwnud4","slide":4,"text":"Consented audio","textPreview":"Consented audio","textChars":15,"textLines":1,"bbox":[517,336,112,18]}
+{"kind":"shape","id":"sh/filsfmtw","slide":4,"bbox":[72,382,1115,198]}
+{"kind":"textbox","id":"sh/ehcbmhsb","slide":4,"text":"ON-DEVICE TRUST BOUNDARY","textPreview":"ON-DEVICE TRUST BOUNDARY","textChars":24,"textLines":1,"bbox":[90,392,250,20]}
+{"kind":"shape","id":"sh/1knahwbm","slide":4,"bbox":[90,430,205,112]}
+{"kind":"textbox","id":"sh/gjutorah","slide":4,"text":"OCR + STT","textPreview":"OCR + STT","textChars":9,"textLines":1,"bbox":[104,448,177,22]}
+{"kind":"textbox","id":"sh/3m5sjmts","slide":4,"text":"Bundled OCR; offline speech adapter","textPreview":"Bundled OCR; offline speech adapter","textChars":35,"textLines":1,"bbox":[102,482,181,44]}
+{"kind":"shape","id":"sh/2lwbq1s7","slide":4,"bbox":[337,430,205,112]}
+{"kind":"textbox","id":"sh/p8nalwby","slide":4,"text":"Claim parser","textPreview":"Claim parser","textChars":12,"textLines":1,"bbox":[351,448,177,22]}
+{"kind":"textbox","id":"sh/onetsrad","slide":4,"text":"Schema-constrained JSON","textPreview":"Schema-constrained JSON","textChars":23,"textLines":1,"bbox":[349,482,181,44]}
+{"kind":"shape","id":"sh/ba5sn6t4","slide":4,"bbox":[584,430,205,112]}
+{"kind":"textbox","id":"sh/q9wbu1sj","slide":4,"text":"Evidence graph","textPreview":"Evidence graph","textChars":14,"textLines":1,"bbox":[598,448,177,22]}
+{"kind":"textbox","id":"sh/8fy9kbqh","slide":4,"text":"Embedding retrieval + source rank","textPreview":"Embedding retrieval + source rank","textChars":33,"textLines":1,"bbox":[596,482,181,44]}
+{"kind":"shape","id":"sh/9g7adg72","slide":4,"bbox":[831,430,205,112]}
+{"kind":"textbox","id":"sh/mdgri18b","slide":4,"text":"Verifier","textPreview":"Verifier","textChars":8,"textLines":1,"bbox":[845,448,177,22]}
+{"kind":"textbox","id":"sh/7epsb6pw","slide":4,"text":"Constraints + true-cost engine","textPreview":"Constraints + true-cost engine","textChars":30,"textLines":1,"bbox":[843,482,181,44]}
+{"kind":"shape","id":"sh/kby9gbql","slide":4,"bbox":[1048,430,122,112]}
+{"kind":"textbox","id":"sh/lc7a9w76","slide":4,"text":"Vault","textPreview":"Vault","textChars":5,"textLines":1,"bbox":[1062,448,94,22]}
+{"kind":"textbox","id":"sh/ypwre18f","slide":4,"text":"Encrypted local vault","textPreview":"Encrypted local vault","textChars":21,"textLines":1,"bbox":[1060,482,98,44]}
+{"kind":"shape","id":"sh/za5s76p0","slide":4,"bbox":[845,606,220,30]}
+{"kind":"textbox","id":"sh/cne9crq9","slide":4,"text":"OPTIONAL CLOUD FALLBACK","textPreview":"OPTIONAL CLOUD FALLBACK","textChars":23,"textLines":1,"bbox":[855,612,200,18]}
+{"kind":"textbox","id":"sh/xonq5w7u","slide":4,"text":"Only explicit user action; raw evidence stays local by default","textPreview":"Only explicit user action; raw evidence stays local by default","textChars":62,"textLines":1,"bbox":[760,642,405,22]}
+{"kind":"shape","id":"sh/hgjyxoja","slide":4,"bbox":[72,606,120,30]}
+{"kind":"textbox","id":"sh/gfaxo325","slide":4,"text":"OFFICE KIT","textPreview":"OFFICE KIT","textChars":10,"textLines":1,"bbox":[82,612,100,18]}
+{"kind":"textbox","id":"sh/fehgvy1k","slide":4,"text":"screen mirror • shared clipboard • file transfer • remote input","textPreview":"screen mirror • shared clipboard • file transfer • remote input","textChars":63,"textLines":1,"bbox":[210,612,520,20]}
+{"kind":"notes","id":"nt/0e0bjs","slide":4,"text":""}
+{"kind":"slide","id":"sl/x37ydl","slide":5,"title":"TEAM ANKOR","textShapes":19}
+{"kind":"textbox","id":"sh/twjqh07u","slide":5,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/6tsr65o3","slide":5,"text":"VERIFICATION ENGINE","textPreview":"VERIFICATION ENGINE","textChars":19,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/ru18fapo","slide":5,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/47a94v6d","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/5sjqd07y","slide":5,"text":"AI PROPOSES THE CLAIM; DETERMINISTIC LOGIC DECIDES THE MONEY","textPreview":"AI PROPOSES THE CLAIM; DETERMINISTIC LOGIC DECIDES THE MONEY","textChars":60,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/i58r2lo7","slide":5,"text":"The core object is a typed claim with provenance, not an untraceable paragraph of generated text.","textPreview":"The core object is a typed claim with provenance, not an untraceable paragraph of generated text.","textChars":97,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"shape","id":"sh/j6h8bqps","slide":5,"bbox":[72,312,430,292]}
+{"kind":"textbox","id":"sh/o3u9gz6h","slide":5,"text":"CLAIM OBJECT","textPreview":"CLAIM OBJECT","textChars":12,"textLines":1,"bbox":[98,336,170,22]}
+{"kind":"textbox","id":"sh/po3ap472","slide":5,"text":"claim_id: c_017\nconcept: \"processing_fee\"\nvalue: 999\ncurrency: INR\ncondition: \"EMI checkout\"\nsource: invoice.pdf#p1:b7\ntimestamp: 2026-08-24T...\nauthority: CONTRACTUAL\nconfidence: 0.94","textPreview":"claim_id: c_017 | concept: \"processing_fee\" | value: 999 | currency: INR | condition: \"EMI checkout\" | source: invoice.pdf#p1:b7 | timest...","textChars":184,"textLines":9,"bbox":[98,374,370,206]}
+{"kind":"textbox","id":"sh/xkvi9kru","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[520,424,42,30]}
+{"kind":"shape","id":"sh/wjmhgza9","slide":5,"bbox":[575,312,282,292]}
+{"kind":"textbox","id":"sh/bid07u94","slide":5,"text":"MATCH SCORE","textPreview":"MATCH SCORE","textChars":11,"textLines":1,"bbox":[600,336,220,22]}
+{"kind":"textbox","id":"sh/ah4zepsj","slide":5,"text":"0.40  semantic similarity\n0.25  unit / value consistency\n0.20  condition overlap\n0.15  temporal compatibility","textPreview":"0.40  semantic similarity | 0.25  unit / value consistency | 0.20  condition overlap | 0.15  temporal compatibility","textChars":109,"textLines":4,"bbox":[600,380,230,108]}
+{"kind":"shape","id":"sh/9gvi5kry","slide":5,"bbox":[600,510,230,1]}
+{"kind":"textbox","id":"sh/ofmhcfad","slide":5,"text":"Candidate retrieval only","textPreview":"Candidate retrieval only","textChars":24,"textLines":1,"bbox":[600,530,230,22]}
+{"kind":"textbox","id":"sh/ned03a9s","slide":5,"text":"Never the final verdict","textPreview":"Never the final verdict","textChars":23,"textLines":1,"bbox":[600,558,230,22]}
+{"kind":"textbox","id":"sh/mdkza5s7","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[870,424,42,30]}
+{"kind":"shape","id":"sh/tcfih4r2","slide":5,"bbox":[925,312,262,292]}
+{"kind":"textbox","id":"sh/8b61ojah","slide":5,"text":"CONSTRAINT ENGINE","textPreview":"CONSTRAINT ENGINE","textChars":17,"textLines":1,"bbox":[950,336,212,22]}
+{"kind":"textbox","id":"sh/sfelknyt","slide":5,"text":"Fee promised = 0\nFee signed = 999\nCash discount lost = 1,149","textPreview":"Fee promised = 0 | Fee signed = 999 | Cash discount lost = 1,149","textChars":60,"textLines":3,"bbox":[950,380,212,82]}
+{"kind":"shape","id":"sh/dg72dsze","slide":5,"bbox":[950,478,212,1]}
+{"kind":"textbox","id":"sh/qtw3idgn","slide":5,"text":"TRUE COST","textPreview":"TRUE COST","textChars":9,"textLines":1,"bbox":[950,496,100,20]}
+{"kind":"textbox","id":"sh/re5kbih8","slide":5,"text":"₹50,000 + ₹999 + ₹1,149","textPreview":"₹50,000 + ₹999 + ₹1,149","textChars":23,"textLines":1,"bbox":[950,526,212,26]}
+{"kind":"shape","id":"sh/4relg3ix","slide":5,"bbox":[950,566,212,30]}
+{"kind":"textbox","id":"sh/5sn298z2","slide":5,"text":"CHANGED  •  +₹2,148","textPreview":"CHANGED  •  +₹2,148","textChars":19,"textLines":1,"bbox":[960,572,192,18]}
+{"kind":"textbox","id":"sh/ipwjed0r","slide":5,"text":"Every status stores supporting and opposing evidence IDs.","textPreview":"Every status stores supporting and opposing evidence IDs.","textChars":57,"textLines":1,"bbox":[72,628,900,24]}
+{"kind":"notes","id":"nt/x37ydl","slide":5,"text":""}
+{"kind":"slide","id":"sl/xfk6aa","slide":6,"title":"TEAM ANKOR","textShapes":24}
+{"kind":"textbox","id":"sh/lgryx4zi","slide":6,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/ydgzmpgr","slide":6,"text":"IMPLEMENTATION PLAN","textPreview":"IMPLEMENTATION PLAN","textChars":19,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/zepgvuhc","slide":6,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/cryxkzyl","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/ds7yt4z6","slide":6,"text":"THE MVP IS SCOPED FOR A 30-HOUR BUILD WITHOUT FAKING THE HARD PARTS","textPreview":"THE MVP IS SCOPED FOR A 30-HOUR BUILD WITHOUT FAKING THE HARD PARTS","textChars":67,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/qpgfip0v","slide":6,"text":"A narrow electronics/EMI journey exercises every architectural component end to end.","textPreview":"A narrow electronics/EMI journey exercises every architectural component end to end.","textChars":84,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"textbox","id":"sh/bqpgruhg","slide":6,"text":"ANDROID APPLICATION","textPreview":"ANDROID APPLICATION","textChars":19,"textLines":1,"bbox":[72,304,240,20]}
+{"kind":"shape","id":"sh/wnihwjy5","slide":6,"bbox":[72,334,500,52]}
+{"kind":"shape","id":"sh/hoby5ozq","slide":6,"bbox":[72,334,5,52]}
+{"kind":"textbox","id":"sh/pgzet8fi","slide":6,"text":"UI + capture","textPreview":"UI + capture","textChars":12,"textLines":1,"bbox":[98,343,145,20]}
+{"kind":"textbox","id":"sh/ofqdk3ex","slide":6,"text":"Kotlin • Jetpack Compose • CameraX","textPreview":"Kotlin • Jetpack Compose • CameraX","textChars":34,"textLines":1,"bbox":[250,344,295,20]}
+{"kind":"shape","id":"sh/nehwryxc","slide":6,"bbox":[72,396,500,52]}
+{"kind":"shape","id":"sh/2d8vidwr","slide":6,"bbox":[72,396,5,52]}
+{"kind":"textbox","id":"sh/1czep8f6","slide":6,"text":"OCR","textPreview":"OCR","textChars":3,"textLines":1,"bbox":[98,405,145,20]}
+{"kind":"textbox","id":"sh/0bqdg3el","slide":6,"text":"Bundled ML Kit Text Recognition","textPreview":"Bundled ML Kit Text Recognition","textChars":31,"textLines":1,"bbox":[250,406,295,20]}
+{"kind":"shape","id":"sh/fahwnyx0","slide":6,"bbox":[72,458,500,52]}
+{"kind":"shape","id":"sh/e9ovetwv","slide":6,"bbox":[72,458,5,52]}
+{"kind":"textbox","id":"sh/l8je1sfq","slide":6,"text":"Local inference","textPreview":"Local inference","textChars":15,"textLines":1,"bbox":[98,467,145,20]}
+{"kind":"textbox","id":"sh/k7axsne5","slide":6,"text":"Quantized open model • ONNX Runtime adapter","textPreview":"Quantized open model • ONNX Runtime adapter","textChars":43,"textLines":1,"bbox":[250,468,295,20]}
+{"kind":"shape","id":"sh/4n2pkvqd","slide":6,"bbox":[72,520,500,52]}
+{"kind":"shape","id":"sh/5obqd07y","slide":6,"bbox":[72,520,5,52]}
+{"kind":"textbox","id":"sh/ilk7il87","slide":6,"text":"Verification","textPreview":"Verification","textChars":12,"textLines":1,"bbox":[98,529,145,20]}
+{"kind":"textbox","id":"sh/3mt8bqps","slide":6,"text":"Kotlin rules • BigDecimal cost engine","textPreview":"Kotlin rules • BigDecimal cost engine","textChars":37,"textLines":1,"bbox":[250,530,295,20]}
+{"kind":"shape","id":"sh/wj2pgvqh","slide":6,"bbox":[72,582,500,52]}
+{"kind":"shape","id":"sh/hkbq9g72","slide":6,"bbox":[72,582,5,52]}
+{"kind":"textbox","id":"sh/ux07el8b","slide":6,"text":"Storage","textPreview":"Storage","textChars":7,"textLines":1,"bbox":[98,591,145,20]}
+{"kind":"textbox","id":"sh/vy987q9w","slide":6,"text":"Room / SQLCipher • evidence hashes","textPreview":"Room / SQLCipher • evidence hashes","textChars":34,"textLines":1,"bbox":[250,592,295,20]}
+{"kind":"textbox","id":"sh/8vipcbq5","slide":6,"text":"HACKATHON EXECUTION","textPreview":"HACKATHON EXECUTION","textChars":19,"textLines":1,"bbox":[625,304,260,20]}
+{"kind":"shape","id":"sh/9wr65grq","slide":6,"bbox":[625,334,560,72]}
+{"kind":"textbox","id":"sh/bqp8v6ts","slide":6,"text":"55%  RED LIGHT  •  PHONE-FIRST","textPreview":"55%  RED LIGHT  •  PHONE-FIRST","textChars":30,"textLines":1,"bbox":[650,353,510,24]}
+{"kind":"textbox","id":"sh/apgrm1s7","slide":6,"text":"UI, capture, OCR, device inference, offline validation","textPreview":"UI, capture, OCR, device inference, offline validation","textChars":54,"textLines":1,"bbox":[650,380,510,18]}
+{"kind":"shape","id":"sh/xsrqxgbi","slide":6,"bbox":[625,420,560,72]}
+{"kind":"textbox","id":"sh/cry9obax","slide":6,"text":"45%  GREEN LIGHT  •  BOTH DEVICES","textPreview":"45%  GREEN LIGHT  •  BOTH DEVICES","textChars":33,"textLines":1,"bbox":[650,439,510,24]}
+{"kind":"textbox","id":"sh/zu98zqto","slide":6,"text":"Model packaging, integration, profiling, demo hardening","textPreview":"Model packaging, integration, profiling, demo hardening","textChars":55,"textLines":1,"bbox":[650,466,510,18]}
+{"kind":"shape","id":"sh/yt0rqls3","slide":6,"bbox":[625,512,560,92]}
+{"kind":"textbox","id":"sh/lwrq1gbu","slide":6,"text":"OFFICE KIT  •  10% OF SCORE","textPreview":"OFFICE KIT  •  10% OF SCORE","textChars":27,"textLines":1,"bbox":[650,530,245,22]}
+{"kind":"textbox","id":"sh/kvi9sba9","slide":6,"text":"Mirror the app • move test documents • paste logs • remote input","textPreview":"Mirror the app • move test documents • paste logs • remote input","textChars":64,"textLines":1,"bbox":[650,566,510,22]}
+{"kind":"textbox","id":"sh/7i983qtk","slide":6,"text":"Fallback policy: if NPU integration is unavailable, preserve the same runtime interface and benchmark NNAPI/CPU—functionality never depends on one accelerator.","textPreview":"Fallback policy: if NPU integration is unavailable, preserve the same runtime interface and benchmark NNAPI/CPU—functionality never depen...","textChars":159,"textLines":1,"bbox":[625,625,560,36]}
+{"kind":"notes","id":"nt/xfk6aa","slide":6,"text":""}
+{"kind":"slide","id":"sl/sl8mgg","slide":7,"title":"TEAM ANKOR","textShapes":28}
+{"kind":"textbox","id":"sh/w3qp8zi5","slide":7,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,28,175,24]}
+{"kind":"textbox","id":"sh/b2hofu1k","slide":7,"text":"CONCLUSION","textPreview":"CONCLUSION","textChars":10,"textLines":1,"bbox":[965,28,255,24]}
+{"kind":"shape","id":"sh/a1876p0z","slide":7,"bbox":[58,60,1164,2]}
+{"kind":"textbox","id":"sh/lsjql4j2","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1170,674,48,18]}
+{"kind":"textbox","id":"sh/k7qpcjih","slide":7,"text":"DEALTWIN IS TECHNICALLY CREDIBLE, DEMONSTRABLE AND BUILT TO SCALE","textPreview":"DEALTWIN IS TECHNICALLY CREDIBLE, DEMONSTRABLE AND BUILT TO SCALE","textChars":65,"textLines":1,"bbox":[72,88,760,22]}
+{"kind":"textbox","id":"sh/j6h8je1w","slide":7,"text":"Selection should depend on whether the prototype proves traceable reconciliation—not on the number of screens.","textPreview":"Selection should depend on whether the prototype proves traceable reconciliation—not on the number of screens.","textChars":110,"textLines":1,"bbox":[72,122,1060,102]}
+{"kind":"textbox","id":"sh/y587a90b","slide":7,"text":"LIVE SELECTION DEMO","textPreview":"LIVE SELECTION DEMO","textChars":19,"textLines":1,"bbox":[72,302,240,20]}
+{"kind":"shape","id":"sh/twjqpojy","slide":7,"bbox":[72,334,34,34]}
+{"kind":"textbox","id":"sh/8vapgjid","slide":7,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[72,342,34,18]}
+{"kind":"textbox","id":"sh/ulknmtwr","slide":7,"text":"Capture no-cost EMI advertisement","textPreview":"Capture no-cost EMI advertisement","textChars":33,"textLines":1,"bbox":[124,340,360,22]}
+{"kind":"shape","id":"sh/fmd4vyxc","slide":7,"bbox":[72,382,34,34]}
+{"kind":"textbox","id":"sh/gnm5o3ex","slide":7,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[72,390,34,18]}
+{"kind":"textbox","id":"sh/h8vmx8f2","slide":7,"text":"Scan invoice + KFS","textPreview":"Scan invoice + KFS","textChars":18,"textLines":1,"bbox":[124,388,360,22]}
+{"kind":"shape","id":"sh/294nqdwn","slide":7,"bbox":[72,430,34,34]}
+{"kind":"textbox","id":"sh/3adozix8","slide":7,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[72,438,34,18]}
+{"kind":"textbox","id":"sh/4bm5snet","slide":7,"text":"Generate structured Promise Ledger","textPreview":"Generate structured Promise Ledger","textChars":34,"textLines":1,"bbox":[124,436,360,22]}
+{"kind":"shape","id":"sh/pcv618fe","slide":7,"bbox":[72,478,34,34]}
+{"kind":"textbox","id":"sh/yd0ne9wj","slide":7,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[72,486,34,18]}
+{"kind":"textbox","id":"sh/je94nex4","slide":7,"text":"Reveal ₹2,148 delta with sources","textPreview":"Reveal ₹2,148 delta with sources","textChars":32,"textLines":1,"bbox":[124,484,360,22]}
+{"kind":"shape","id":"sh/nipkvadw","slide":7,"bbox":[72,526,34,34]}
+{"kind":"textbox","id":"sh/mxgjm5cb","slide":7,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[72,534,34,18]}
+{"kind":"textbox","id":"sh/9k72xkv2","slide":7,"text":"Create neutral seller clarification","textPreview":"Create neutral seller clarification","textChars":35,"textLines":1,"bbox":[124,532,360,22]}
+{"kind":"textbox","id":"sh/ojy1ofuh","slide":7,"text":"PROTOTYPE ACCEPTANCE TARGETS","textPreview":"PROTOTYPE ACCEPTANCE TARGETS","textChars":28,"textLines":1,"bbox":[545,302,300,20]}
+{"kind":"textbox","id":"sh/zu5kradk","slide":7,"text":"100%","textPreview":"100%","textChars":4,"textLines":1,"bbox":[545,334,90,34]}
+{"kind":"textbox","id":"sh/etwji5cf","slide":7,"text":"ledger rows link to source evidence","textPreview":"ledger rows link to source evidence","textChars":35,"textLines":1,"bbox":[645,338,315,28]}
+{"kind":"shape","id":"sh/1w72t0vq","slide":7,"bbox":[545,376,400,1]}
+{"kind":"textbox","id":"sh/0ve1kfu5","slide":7,"text":"100%","textPreview":"100%","textChars":4,"textLines":1,"bbox":[545,392,90,34]}
+{"kind":"textbox","id":"sh/jq9k3ud4","slide":7,"text":"scripted cost cases use deterministic math","textPreview":"scripted cost cases use deterministic math","textChars":42,"textLines":1,"bbox":[645,396,315,28]}
+{"kind":"shape","id":"sh/yp03upcj","slide":7,"bbox":[545,434,400,1]}
+{"kind":"textbox","id":"sh/gvahora1","slide":7,"text":"≤ 4 s","textPreview":"≤ 4 s","textChars":5,"textLines":1,"bbox":[545,450,90,34]}
+{"kind":"textbox","id":"sh/hwjyhwbm","slide":7,"text":"reconciliation target on loaner device","textPreview":"reconciliation target on loaner device","textChars":38,"textLines":1,"bbox":[645,454,315,28]}
+{"kind":"shape","id":"sh/utszmhsv","slide":7,"bbox":[545,492,400,1]}
+{"kind":"textbox","id":"sh/fu1gfmtg","slide":7,"text":"0","textPreview":"0","textChars":1,"textLines":1,"bbox":[545,508,90,34]}
+{"kind":"textbox","id":"sh/4zuhsbax","slide":7,"text":"raw documents uploaded by default","textPreview":"raw documents uploaded by default","textChars":33,"textLines":1,"bbox":[645,512,315,28]}
+{"kind":"shape","id":"sh/p03ilgbi","slide":7,"bbox":[545,550,400,1]}
+{"kind":"shape","id":"sh/2xczq1s7","slide":7,"bbox":[980,302,208,266]}
+{"kind":"textbox","id":"sh/3ylgj6tc","slide":7,"text":"SCALE PATH","textPreview":"SCALE PATH","textChars":10,"textLines":1,"bbox":[1004,326,160,20]}
+{"kind":"textbox","id":"sh/c3uhwba9","slide":7,"text":"Electronics EMI\n↓\nInsurance + lending\n↓\nTelecom + travel\n↓\nConsumer-contract SDK / API","textPreview":"Electronics EMI | ↓ | Insurance + lending | ↓ | Telecom + travel | ↓ | Consumer-contract SDK / API","textChars":86,"textLines":7,"bbox":[1004,370,160,160]}
+{"kind":"shape","id":"sh/donipgbu","slide":7,"bbox":[72,600,1116,54]}
+{"kind":"textbox","id":"sh/dkbqpcbi","slide":7,"text":"Companies preserve what customers signed. DealTwin preserves what they were promised—and verifies the difference.","textPreview":"Companies preserve what customers signed. DealTwin preserves what they were promised—and verifies the difference.","textChars":113,"textLines":1,"bbox":[96,617,1068,24]}
+{"kind":"notes","id":"nt/sl8mgg","slide":7,"text":""}
+{"kind":"slide","id":"sl/ev3xks","slide":8,"title":"TEAM ANKOR","textShapes":18}
+{"kind":"textbox","id":"sh/gfudcbat","slide":8,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[72,60,230,24]}
+{"kind":"textbox","id":"sh/fulw36t8","slide":8,"text":"Thank you.","textPreview":"Thank you.","textChars":10,"textLines":1,"bbox":[72,186,620,84]}
+{"kind":"textbox","id":"sh/etcva1sn","slide":8,"text":"Remember the promise.\nVerify the deal.","textPreview":"Remember the promise. | Verify the deal.","textChars":38,"textLines":2,"bbox":[72,292,580,92]}
+{"kind":"shape","id":"sh/pkne9gba","slide":8,"bbox":[72,448,390,30]}
+{"kind":"textbox","id":"sh/ojedgbap","slide":8,"text":"QUESTIONS  •  ARCHITECTURE  •  LIVE DEMO","textPreview":"QUESTIONS  •  ARCHITECTURE  •  LIVE DEMO","textChars":40,"textLines":1,"bbox":[82,454,370,18]}
+{"kind":"textbox","id":"sh/3i5w76tk","slide":8,"text":"DealTwin","textPreview":"DealTwin","textChars":8,"textLines":1,"bbox":[72,618,240,28]}
+{"kind":"textbox","id":"sh/2hwve1sz","slide":8,"text":"THE PRODUCT LOOP","textPreview":"THE PRODUCT LOOP","textChars":16,"textLines":1,"bbox":[760,112,350,22]}
+{"kind":"shape","id":"sh/5ojexwb6","slide":8,"bbox":[790,166,300,68]}
+{"kind":"textbox","id":"sh/4nad4ral","slide":8,"text":"CAPTURE","textPreview":"CAPTURE","textChars":7,"textLines":1,"bbox":[810,179,105,20]}
+{"kind":"textbox","id":"sh/21cna1gf","slide":8,"text":"Evidence","textPreview":"Evidence","textChars":8,"textLines":1,"bbox":[920,179,145,22]}
+{"kind":"textbox","id":"sh/n2l436x0","slide":8,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[915,234,50,28]}
+{"kind":"shape","id":"sh/o3e5cbyl","slide":8,"bbox":[790,264,300,68]}
+{"kind":"textbox","id":"sh/p4n65gf6","slide":8,"text":"STRUCTURE","textPreview":"STRUCTURE","textChars":9,"textLines":1,"bbox":[810,277,105,20]}
+{"kind":"textbox","id":"sh/apwnelgr","slide":8,"text":"Claims","textPreview":"Claims","textChars":6,"textLines":1,"bbox":[920,277,145,22]}
+{"kind":"textbox","id":"sh/bq5o76xw","slide":8,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[915,332,50,28]}
+{"kind":"shape","id":"sh/cre5gbeh","slide":8,"bbox":[790,362,300,68]}
+{"kind":"textbox","id":"sh/xsn69gf2","slide":8,"text":"VERIFY","textPreview":"VERIFY","textChars":6,"textLines":1,"bbox":[810,375,105,20]}
+{"kind":"textbox","id":"sh/ytwnilwn","slide":8,"text":"Constraints","textPreview":"Constraints","textChars":11,"textLines":1,"bbox":[920,375,145,22]}
+{"kind":"textbox","id":"sh/zu5obqx8","slide":8,"text":"↓","textPreview":"↓","textChars":1,"textLines":1,"bbox":[915,430,50,28]}
+{"kind":"shape","id":"sh/vyp4zqdg","slide":8,"bbox":[790,460,300,68]}
+{"kind":"textbox","id":"sh/uxgn6lcv","slide":8,"text":"ACT","textPreview":"ACT","textChars":3,"textLines":1,"bbox":[810,473,105,20]}
+{"kind":"textbox","id":"sh/h07m10v6","slide":8,"text":"Clarification","textPreview":"Clarification","textChars":13,"textLines":1,"bbox":[920,473,145,22]}
+{"kind":"textbox","id":"sh/wzy58vul","slide":8,"text":"8 / 8","textPreview":"8 / 8","textChars":5,"textLines":1,"bbox":[1130,675,70,18]}
+{"kind":"notes","id":"nt/ev3xks","slide":8,"text":""}

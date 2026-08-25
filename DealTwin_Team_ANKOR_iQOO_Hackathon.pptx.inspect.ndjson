@@ -1,0 +1,280 @@
+{"kind":"deck","id":"pr/kgtb3z","name":"Deck"}
+{"kind":"layout","layoutId":"5a7d62ae-99fe-43f8-85a7-a3f8a233e6c9","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5ece2a77-df05-402d-b14f-a32cde802c33","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/glj4pa","slide":1,"title":"iQOO HACKATHON 2026","textShapes":7}
+{"kind":"shape","id":"sh/vi5svmpg","slide":1,"bbox":[0,0,760,720]}
+{"kind":"textbox","id":"sh/ahwrm18v","slide":1,"text":"iQOO HACKATHON 2026","textPreview":"iQOO HACKATHON 2026","textChars":19,"textLines":1,"bbox":[70,62,300,24]}
+{"kind":"textbox","id":"sh/9gnatw7a","slide":1,"text":"DealTwin","textPreview":"DealTwin","textChars":8,"textLines":1,"bbox":[70,166,490,84]}
+{"kind":"textbox","id":"sh/8fe9krqp","slide":1,"text":"The memory every purchase should have.","textPreview":"The memory every purchase should have.","textChars":38,"textLines":1,"bbox":[70,260,500,76]}
+{"kind":"textbox","id":"sh/ne58rmp4","slide":1,"text":"Capture what was promised. Compare it with what you sign. Understand the true deal before you pay.","textPreview":"Capture what was promised. Compare it with what you sign. Understand the true deal before you pay.","textChars":98,"textLines":1,"bbox":[70,355,480,98]}
+{"kind":"shape","id":"sh/mdwrih8j","slide":1,"bbox":[70,488,275,36]}
+{"kind":"textbox","id":"sh/lcnqpc7e","slide":1,"text":"MOBILE-FIRST • LOCAL-FIRST","textPreview":"MOBILE-FIRST • LOCAL-FIRST","textChars":26,"textLines":1,"bbox":[82,496,251,20]}
+{"kind":"textbox","id":"sh/0bu9g7qt","slide":1,"text":"Presented by TEAM ANKOR","textPreview":"Presented by TEAM ANKOR","textChars":23,"textLines":1,"bbox":[70,608,380,30]}
+{"kind":"textbox","id":"sh/it0z2583","slide":1,"text":"Remember the promise. Verify the deal.","textPreview":"Remember the promise. Verify the deal.","textChars":38,"textLines":1,"bbox":[70,645,420,24]}
+{"kind":"image","id":"im/l43250z2","slide":1,"name":"","alt":"Smartphone comparing purchase evidence and final paperwork","bbox":[610,0,670,720]}
+{"kind":"notes","id":"nt/glj4pa","slide":1,"text":""}
+{"kind":"slide","id":"sl/n91hby","slide":2,"title":"TEAM ANKOR","textShapes":21}
+{"kind":"textbox","id":"sh/lkzi10vm","slide":2,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/yhozqlwv","slide":2,"text":"THE PROBLEM","textPreview":"THE PROBLEM","textChars":11,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/zih0zqdg","slide":2,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/8nq1wvex","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/9ozi50vi","slide":2,"text":"A FAMILIAR CONSUMER FAILURE","textPreview":"A FAMILIAR CONSUMER FAILURE","textChars":27,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/ml8ju5w7","slide":2,"text":"The deal people understand often changes before they sign.","textPreview":"The deal people understand often changes before they sign.","textChars":58,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"textbox","id":"sh/7mh03adc","slide":2,"text":"Promises live in one place. Fees, exclusions and altered terms appear somewhere else.","textPreview":"Promises live in one place. Fees, exclusions and altered terms appear somewhere else.","textChars":85,"textLines":1,"bbox":[72,250,760,72]}
+{"kind":"shape","id":"sh/wra10fe9","slide":2,"bbox":[74,355,220,55]}
+{"kind":"textbox","id":"sh/hsji9kvu","slide":2,"text":"AD","textPreview":"AD","textChars":2,"textLines":1,"bbox":[88,366,54,20]}
+{"kind":"textbox","id":"sh/h0nixkzy","slide":2,"text":"No-cost EMI","textPreview":"No-cost EMI","textChars":11,"textLines":1,"bbox":[146,368,132,24]}
+{"kind":"shape","id":"sh/gzehofid","slide":2,"bbox":[74,425,220,55]}
+{"kind":"textbox","id":"sh/fy50vahs","slide":2,"text":"VOICE","textPreview":"VOICE","textChars":5,"textLines":1,"bbox":[88,436,54,20]}
+{"kind":"textbox","id":"sh/uxwzmp07","slide":2,"text":"Free insurance","textPreview":"Free insurance","textChars":14,"textLines":1,"bbox":[146,438,132,24]}
+{"kind":"shape","id":"sh/po7i14zu","slide":2,"bbox":[74,495,220,55]}
+{"kind":"textbox","id":"sh/4nyhszi9","slide":2,"text":"CHAT","textPreview":"CHAT","textChars":4,"textLines":1,"bbox":[88,506,54,20]}
+{"kind":"textbox","id":"sh/3250zuh4","slide":2,"text":"2-year warranty","textPreview":"2-year warranty","textChars":15,"textLines":1,"bbox":[146,508,132,24]}
+{"kind":"shape","id":"sh/21wzqp0j","slide":2,"bbox":[334,390,220,55]}
+{"kind":"textbox","id":"sh/5s3yp0jq","slide":2,"text":"INVOICE","textPreview":"INVOICE","textChars":7,"textLines":1,"bbox":[348,401,54,20]}
+{"kind":"textbox","id":"sh/k7uhgvi5","slide":2,"text":"+ Processing fee","textPreview":"+ Processing fee","textChars":16,"textLines":1,"bbox":[406,403,132,24]}
+{"kind":"shape","id":"sh/wbyhwvq1","slide":2,"bbox":[334,470,220,55]}
+{"kind":"textbox","id":"sh/xc7i50rm","slide":2,"text":"KFS","textPreview":"KFS","textChars":3,"textLines":1,"bbox":[348,481,54,20]}
+{"kind":"textbox","id":"sh/a9gzu58v","slide":2,"text":"Cash discount lost","textPreview":"Cash discount lost","textChars":18,"textLines":1,"bbox":[406,483,132,24]}
+{"kind":"textbox","id":"sh/bap03a9g","slide":2,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[565,435,70,60]}
+{"kind":"shape","id":"sh/kfyh0fqx","slide":2,"bbox":[650,345,500,230]}
+{"kind":"textbox","id":"sh/lgri9kri","slide":2,"text":"THE FINAL DEAL","textPreview":"THE FINAL DEAL","textChars":14,"textLines":1,"bbox":[684,373,200,22]}
+{"kind":"textbox","id":"sh/ydgzy587","slide":2,"text":"₹2,148 more","textPreview":"₹2,148 more","textChars":11,"textLines":1,"bbox":[684,412,300,56]}
+{"kind":"textbox","id":"sh/jep07a9s","slide":2,"text":"than the customer expected","textPreview":"than the customer expected","textChars":26,"textLines":1,"bbox":[684,470,350,30]}
+{"kind":"textbox","id":"sh/83ih4zq9","slide":2,"text":"The problem is not missing information. It is missing comparison.","textPreview":"The problem is not missing information. It is missing comparison.","textChars":65,"textLines":1,"bbox":[684,516,410,42]}
+{"kind":"notes","id":"nt/n91hby","slide":2,"text":""}
+{"kind":"slide","id":"sl/4bzcid","slide":3,"title":"TEAM ANKOR","textShapes":18}
+{"kind":"textbox","id":"sh/ep8ri9kn","slide":3,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/1szqdoje","slide":3,"text":"THE SOLUTION","textPreview":"THE SOLUTION","textChars":12,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/0rq9kj2t","slide":3,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/rmh87u1w","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/qlorepkr","slide":3,"text":"NOT ANOTHER DOCUMENT SUMMARIZER","textPreview":"NOT ANOTHER DOCUMENT SUMMARIZER","textChars":31,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/dozq94j2","slide":3,"text":"DealTwin builds a verifiable Promise Ledger.","textPreview":"DealTwin builds a verifiable Promise Ledger.","textChars":44,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"textbox","id":"sh/snq9gz2h","slide":3,"text":"Every conclusion points back to the exact screenshot, clause or consented audio timestamp.","textPreview":"Every conclusion points back to the exact screenshot, clause or consented audio timestamp.","textChars":90,"textLines":1,"bbox":[72,250,760,72]}
+{"kind":"shape","id":"sh/3yx83u10","slide":3,"bbox":[72,354,295,220]}
+{"kind":"textbox","id":"sh/ixorapkf","slide":3,"text":"PROMISE\nLEDGER","textPreview":"PROMISE | LEDGER","textChars":14,"textLines":2,"bbox":[100,386,235,82]}
+{"kind":"textbox","id":"sh/ov29cnux","slide":3,"text":"What was said\nWhat was signed\nWhat changed","textPreview":"What was said | What was signed | What changed","textChars":42,"textLines":3,"bbox":[100,485,220,82]}
+{"kind":"shape","id":"sh/pwbalsvi","slide":3,"bbox":[425,344,765,63]}
+{"kind":"textbox","id":"sh/2tkradcr","slide":3,"text":"No-cost EMI","textPreview":"No-cost EMI","textChars":11,"textLines":1,"bbox":[452,360,350,30]}
+{"kind":"shape","id":"sh/nut8jidc","slide":3,"bbox":[820,357,150,36]}
+{"kind":"textbox","id":"sh/07i983ul","slide":3,"text":"CHANGED","textPreview":"CHANGED","textChars":7,"textLines":1,"bbox":[832,365,126,20]}
+{"kind":"textbox","id":"sh/18bqh8v6","slide":3,"text":"Invoice §4","textPreview":"Invoice §4","textChars":10,"textLines":1,"bbox":[985,362,170,24]}
+{"kind":"shape","id":"sh/e50r6tcv","slide":3,"bbox":[425,417,765,63]}
+{"kind":"textbox","id":"sh/f698fyd0","slide":3,"text":"2-year warranty","textPreview":"2-year warranty","textChars":15,"textLines":1,"bbox":[452,433,350,30]}
+{"kind":"shape","id":"sh/k3m9k7u5","slide":3,"bbox":[820,430,150,36]}
+{"kind":"textbox","id":"sh/lovatcbq","slide":3,"text":"KEPT","textPreview":"KEPT","textChars":4,"textLines":1,"bbox":[832,438,126,20]}
+{"kind":"textbox","id":"sh/tkrqxs3u","slide":3,"text":"Warranty card","textPreview":"Warranty card","textChars":13,"textLines":1,"bbox":[985,435,170,24]}
+{"kind":"shape","id":"sh/8ji947m9","slide":3,"bbox":[425,490,765,63]}
+{"kind":"textbox","id":"sh/7i98v2lo","slide":3,"text":"Free insurance","textPreview":"Free insurance","textChars":14,"textLines":1,"bbox":[452,506,350,30]}
+{"kind":"shape","id":"sh/6h0r2x43","slide":3,"bbox":[820,503,150,36]}
+{"kind":"textbox","id":"sh/lgrqts3i","slide":3,"text":"MISSING","textPreview":"MISSING","textChars":7,"textLines":1,"bbox":[832,511,126,20]}
+{"kind":"textbox","id":"sh/kfi90nmx","slide":3,"text":"KFS + invoice","textPreview":"KFS + invoice","textChars":13,"textLines":1,"bbox":[985,508,170,24]}
+{"kind":"textbox","id":"sh/je98rilc","slide":3,"text":"Five evidence-based outcomes: Kept • Changed • Missing • Contradicted • Unverifiable","textPreview":"Five evidence-based outcomes: Kept • Changed • Missing • Contradicted • Unverifiable","textChars":84,"textLines":1,"bbox":[425,576,765,30]}
+{"kind":"notes","id":"nt/4bzcid","slide":3,"text":""}
+{"kind":"slide","id":"sl/3wnarv","slide":4,"title":"TEAM ANKOR","textShapes":26}
+{"kind":"textbox","id":"sh/7618v61w","slide":4,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/87ap4bih","slide":4,"text":"MOBILE-FIRST JOURNEY","textPreview":"MOBILE-FIRST JOURNEY","textChars":20,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/983qxgj2","slide":4,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/y1s7y10f","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/z218r610","slide":4,"text":"THE PHONE IS THE PRODUCT","textPreview":"THE PHONE IS THE PRODUCT","textChars":24,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/k3ap0bil","slide":4,"text":"One iQOO phone turns scattered evidence into action.","textPreview":"One iQOO phone turns scattered evidence into action.","textChars":52,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"textbox","id":"sh/l4jqtwjq","slide":4,"text":"Camera, microphone and on-device AI make DealTwin useful at the exact moment a purchase is made.","textPreview":"Camera, microphone and on-device AI make DealTwin useful at the exact moment a purchase is made.","textChars":96,"textLines":1,"bbox":[72,250,760,72]}
+{"kind":"shape","id":"sh/ad87uh03","slide":4,"bbox":[72,365,200,178]}
+{"kind":"shape","id":"sh/behonm1o","slide":4,"bbox":[90,383,38,38]}
+{"kind":"textbox","id":"sh/f6hgzu5s","slide":4,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[90,391,38,20]}
+{"kind":"textbox","id":"sh/e58fq947","slide":4,"text":"Capture","textPreview":"Capture","textChars":7,"textLines":1,"bbox":[90,438,164,30]}
+{"kind":"textbox","id":"sh/18jy14ny","slide":4,"text":"Ads, voice, screenshots and documents","textPreview":"Ads, voice, screenshots and documents","textChars":37,"textLines":1,"bbox":[90,474,164,54]}
+{"kind":"shape","id":"sh/07qxszmd","slide":4,"bbox":[304,365,200,178]}
+{"kind":"shape","id":"sh/na1g3e54","slide":4,"bbox":[322,383,38,38]}
+{"kind":"textbox","id":"sh/29sfu94j","slide":4,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[322,391,38,20]}
+{"kind":"textbox","id":"sh/pcjy5onu","slide":4,"text":"Understand","textPreview":"Understand","textChars":10,"textLines":1,"bbox":[322,438,164,30]}
+{"kind":"textbox","id":"sh/obaxwjm9","slide":4,"text":"Extract price, fee, EMI and warranty claims","textPreview":"Extract price, fee, EMI and warranty claims","textChars":43,"textLines":1,"bbox":[322,474,164,54]}
+{"kind":"shape","id":"sh/3exwra5k","slide":4,"bbox":[536,365,200,178]}
+{"kind":"shape","id":"sh/idofipoz","slide":4,"bbox":[554,383,38,38]}
+{"kind":"textbox","id":"sh/m9wjqxon","slide":4,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[554,391,38,20]}
+{"kind":"textbox","id":"sh/7u50zip8","slide":4,"text":"Compare","textPreview":"Compare","textChars":7,"textLines":1,"bbox":[554,438,164,30]}
+{"kind":"textbox","id":"sh/8ve1sn6t","slide":4,"text":"Match the promise against final paperwork","textPreview":"Match the promise against final paperwork","textChars":41,"textLines":1,"bbox":[554,474,164,54]}
+{"kind":"shape","id":"sh/9wni1s7e","slide":4,"bbox":[768,365,200,178]}
+{"kind":"shape","id":"sh/y5czmdor","slide":4,"bbox":[786,383,38,38]}
+{"kind":"textbox","id":"sh/z6l0vipc","slide":4,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[786,391,38,20]}
+{"kind":"textbox","id":"sh/k7e1on6h","slide":4,"text":"Calculate","textPreview":"Calculate","textChars":9,"textLines":1,"bbox":[786,438,164,30]}
+{"kind":"textbox","id":"sh/l8nixs72","slide":4,"text":"Reconstruct the true payable cost","textPreview":"Reconstruct the true payable cost","textChars":33,"textLines":1,"bbox":[786,474,164,54]}
+{"kind":"shape","id":"sh/a1czitof","slide":4,"bbox":[1000,365,200,178]}
+{"kind":"shape","id":"sh/b2l0ryp0","slide":4,"bbox":[1018,383,38,38]}
+{"kind":"textbox","id":"sh/dwrmxgri","slide":4,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1018,391,38,20]}
+{"kind":"textbox","id":"sh/svil4bqx","slide":4,"text":"Act","textPreview":"Act","textChars":3,"textLines":1,"bbox":[1018,438,164,30]}
+{"kind":"textbox","id":"sh/ru94v69c","slide":4,"text":"Generate a neutral seller clarification","textPreview":"Generate a neutral seller clarification","textChars":39,"textLines":1,"bbox":[1018,474,164,54]}
+{"kind":"textbox","id":"sh/qt032187","slide":4,"text":"ON-DEVICE OCR","textPreview":"ON-DEVICE OCR","textChars":13,"textLines":1,"bbox":[93,570,190,22]}
+{"kind":"textbox","id":"sh/5sr2twrm","slide":4,"text":"LOCAL / OPEN LLM","textPreview":"LOCAL / OPEN LLM","textChars":16,"textLines":1,"bbox":[325,570,190,22]}
+{"kind":"textbox","id":"sh/4ril0rq1","slide":4,"text":"EVIDENCE LINKS","textPreview":"EVIDENCE LINKS","textChars":14,"textLines":1,"bbox":[557,570,190,22]}
+{"kind":"textbox","id":"sh/3q9krm9g","slide":4,"text":"DETERMINISTIC MATH","textPreview":"DETERMINISTIC MATH","textChars":18,"textLines":1,"bbox":[789,570,190,22]}
+{"kind":"textbox","id":"sh/ipg3yh8v","slide":4,"text":"SHAREABLE OUTPUT","textPreview":"SHAREABLE OUTPUT","textChars":16,"textLines":1,"bbox":[1021,570,190,22]}
+{"kind":"notes","id":"nt/3wnarv","slide":4,"text":""}
+{"kind":"slide","id":"sl/vpfcya","slide":5,"title":"TEAM ANKOR","textShapes":15}
+{"kind":"textbox","id":"sh/z2547ets","slide":5,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/03e50jud","slide":5,"text":"FLAGSHIP MVP","textPreview":"FLAGSHIP MVP","textChars":12,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/lonm9obi","slide":5,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/qxcnu9cv","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/byl43etg","slide":5,"text":"FOCUS CREATES RELIABILITY","textPreview":"FOCUS CREATES RELIABILITY","textChars":25,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/cze5wzu1","slide":5,"text":"Start with the purchase journey people already distrust: no-cost EMI.","textPreview":"Start with the purchase journey people already distrust: no-cost EMI.","textChars":69,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"textbox","id":"sh/d0nm54bm","slide":5,"text":"Electronics purchases combine advertisements, verbal offers, invoices, KFS documents and warranties—perfect for a convincing end-to-end demo.","textPreview":"Electronics purchases combine advertisements, verbal offers, invoices, KFS documents and warranties—perfect for a convincing end-to-end d...","textChars":141,"textLines":1,"bbox":[72,250,760,72]}
+{"kind":"shape","id":"sh/2tc3qpcz","slide":5,"bbox":[72,365,470,215]}
+{"kind":"textbox","id":"sh/3ul4zutk","slide":5,"text":"PROMISED","textPreview":"PROMISED","textChars":8,"textLines":1,"bbox":[104,394,150,22]}
+{"kind":"textbox","id":"sh/r61kf2do","slide":5,"text":"₹50,000","textPreview":"₹50,000","textChars":7,"textLines":1,"bbox":[104,432,230,48]}
+{"kind":"textbox","id":"sh/65sjmxw3","slide":5,"text":"12 months • zero interest\nFree insurance • 2-year warranty","textPreview":"12 months • zero interest | Free insurance • 2-year warranty","textChars":58,"textLines":2,"bbox":[104,492,360,62]}
+{"kind":"textbox","id":"sh/t832hsve","slide":5,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[558,438,74,60]}
+{"kind":"shape","id":"sh/s7ulonet","slide":5,"bbox":[648,365,540,215]}
+{"kind":"textbox","id":"sh/falkj2dk","slide":5,"text":"TRUE PAYABLE COST","textPreview":"TRUE PAYABLE COST","textChars":17,"textLines":1,"bbox":[680,394,220,22]}
+{"kind":"textbox","id":"sh/e9c3qxwz","slide":5,"text":"₹52,148","textPreview":"₹52,148","textChars":7,"textLines":1,"bbox":[680,432,260,48]}
+{"kind":"textbox","id":"sh/1c32lcvq","slide":5,"text":"+ ₹999 processing fee\n+ ₹1,149 discount loss","textPreview":"+ ₹999 processing fee | + ₹1,149 discount loss","textChars":44,"textLines":2,"bbox":[680,494,280,58]}
+{"kind":"shape","id":"sh/gbuls7e5","slide":5,"bbox":[968,434,185,36]}
+{"kind":"textbox","id":"sh/vehk7yxg","slide":5,"text":"DISCREPANCY FOUND","textPreview":"DISCREPANCY FOUND","textChars":17,"textLines":1,"bbox":[980,442,161,20]}
+{"kind":"textbox","id":"sh/ad8jedwv","slide":5,"text":"MVP output: Promise Ledger + true-cost explanation + seller clarification card","textPreview":"MVP output: Promise Ledger + true-cost explanation + seller clarification card","textChars":78,"textLines":1,"bbox":[72,610,1115,30]}
+{"kind":"notes","id":"nt/vpfcya","slide":5,"text":""}
+{"kind":"slide","id":"sl/cwm89o","slide":6,"title":"TEAM ANKOR","textShapes":31}
+{"kind":"textbox","id":"sh/vuxcnq9o","slide":6,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/wvqdwvqt","slide":6,"text":"IMPLEMENTATION ARCHITECTURE","textPreview":"IMPLEMENTATION ARCHITECTURE","textChars":27,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/hwzup0re","slide":6,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/ix8vyl8z","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/jyhcrq9k","slide":6,"text":"LOCAL-FIRST BY DESIGN","textPreview":"LOCAL-FIRST BY DESIGN","textChars":21,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/4zqd0vq5","slide":6,"text":"Fast, private and explainable—without turning AI into a black box.","textPreview":"Fast, private and explainable—without turning AI into a black box.","textChars":66,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"textbox","id":"sh/50zut0rq","slide":6,"text":"The language model extracts and matches claims; deterministic rules calculate money and preserve accountability.","textPreview":"The language model extracts and matches claims; deterministic rules calculate money and preserve accountability.","textChars":112,"textLines":1,"bbox":[72,250,760,72]}
+{"kind":"shape","id":"sh/y14bm18v","slide":6,"bbox":[72,365,165,156]}
+{"kind":"textbox","id":"sh/z2dcf69g","slide":6,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[90,384,42,22]}
+{"kind":"textbox","id":"sh/3qx8zmhw","slide":6,"text":"Capture","textPreview":"Capture","textChars":7,"textLines":1,"bbox":[90,424,130,28]}
+{"kind":"textbox","id":"sh/2po76hgb","slide":6,"text":"Camera • mic • files","textPreview":"Camera • mic • files","textChars":20,"textLines":1,"bbox":[90,465,130,40]}
+{"kind":"textbox","id":"sh/psfq1wz2","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[234,420,28,30]}
+{"kind":"shape","id":"sh/4r6p8ryh","slide":6,"bbox":[262,365,165,156]}
+{"kind":"textbox","id":"sh/f2d8v2h0","slide":6,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[280,384,42,22]}
+{"kind":"textbox","id":"sh/u1472xgf","slide":6,"text":"Extract","textPreview":"Extract","textChars":7,"textLines":1,"bbox":[280,424,130,28]}
+{"kind":"textbox","id":"sh/hovqxczq","slide":6,"text":"OCR • speech-to-text","textPreview":"OCR • speech-to-text","textChars":20,"textLines":1,"bbox":[280,465,130,40]}
+{"kind":"textbox","id":"sh/g3mp47y5","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[424,420,28,30]}
+{"kind":"shape","id":"sh/7yd8r2ho","slide":6,"bbox":[452,365,165,156]}
+{"kind":"textbox","id":"sh/6x47yxg3","slide":6,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[470,384,42,22]}
+{"kind":"textbox","id":"sh/atkraxkb","slide":6,"text":"Normalize","textPreview":"Normalize","textChars":9,"textLines":1,"bbox":[470,424,130,28]}
+{"kind":"textbox","id":"sh/but8321g","slide":6,"text":"Price • fee • condition","textPreview":"Price • fee • condition","textChars":23,"textLines":1,"bbox":[470,465,130,40]}
+{"kind":"textbox","id":"sh/wv29c721","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[614,420,28,30]}
+{"kind":"shape","id":"sh/xwbq5sjm","slide":6,"bbox":[642,365,165,156]}
+{"kind":"textbox","id":"sh/yxkrexk7","slide":6,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[660,384,42,22]}
+{"kind":"textbox","id":"sh/jyd8721s","slide":6,"text":"Compare","textPreview":"Compare","textChars":7,"textLines":1,"bbox":[660,424,130,28]}
+{"kind":"textbox","id":"sh/kzm9g7id","slide":6,"text":"Semantic + rule matching","textPreview":"Semantic + rule matching","textChars":24,"textLines":1,"bbox":[660,465,130,40]}
+{"kind":"textbox","id":"sh/l0va9cjy","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[804,420,28,30]}
+{"kind":"shape","id":"sh/614rih03","slide":6,"bbox":[832,365,165,156]}
+{"kind":"textbox","id":"sh/7mdsbm1o","slide":6,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[850,384,42,22]}
+{"kind":"textbox","id":"sh/hgfuhg36","slide":6,"text":"Calculate","textPreview":"Calculate","textChars":9,"textLines":1,"bbox":[850,424,130,28]}
+{"kind":"textbox","id":"sh/gv6t8bml","slide":6,"text":"EMI • tax • discount","textPreview":"EMI • tax • discount","textChars":20,"textLines":1,"bbox":[850,465,130,40]}
+{"kind":"textbox","id":"sh/fuxcf6l0","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[994,420,28,30]}
+{"kind":"shape","id":"sh/utob614f","slide":6,"bbox":[1022,365,165,156]}
+{"kind":"textbox","id":"sh/pkzulg32","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1040,384,42,22]}
+{"kind":"textbox","id":"sh/4jqtcb2h","slide":6,"text":"Explain","textPreview":"Explain","textChars":7,"textLines":1,"bbox":[1040,424,130,28]}
+{"kind":"textbox","id":"sh/3ihcjqlw","slide":6,"text":"Ledger • evidence • action","textPreview":"Ledger • evidence • action","textChars":26,"textLines":1,"bbox":[1040,465,130,40]}
+{"kind":"shape","id":"sh/2h8bal4b","slide":6,"bbox":[72,555,1115,62]}
+{"kind":"textbox","id":"sh/dojup03y","slide":6,"text":"ENCRYPTED LOCAL VAULT","textPreview":"ENCRYPTED LOCAL VAULT","textChars":21,"textLines":1,"bbox":[100,575,260,22]}
+{"kind":"textbox","id":"sh/cnqdgv2t","slide":6,"text":"User-controlled evidence • offline access • optional cloud fallback only","textPreview":"User-controlled evidence • offline access • optional cloud fallback only","textChars":72,"textLines":1,"bbox":[380,575,770,22]}
+{"kind":"notes","id":"nt/cwm89o","slide":6,"text":""}
+{"kind":"slide","id":"sl/3scez6","slide":7,"title":"TEAM ANKOR","textShapes":14}
+{"kind":"textbox","id":"sh/k3ehcjip","slide":7,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/j25g3e14","slide":7,"text":"HACKATHON EXECUTION","textPreview":"HACKATHON EXECUTION","textChars":19,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/y1wzat0z","slide":7,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/ts7i98jm","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/87yhg3i1","slide":7,"text":"DESIGNED AROUND RED LIGHT AND GREEN LIGHT","textPreview":"DESIGNED AROUND RED LIGHT AND GREEN LIGHT","textChars":41,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/76p07y1g","slide":7,"text":"The build plan treats phone-first development as an advantage—not a restriction.","textPreview":"The build plan treats phone-first development as an advantage—not a restriction.","textChars":80,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"shape","id":"sh/65gzet0v","slide":7,"bbox":[72,334,638,74]}
+{"kind":"textbox","id":"sh/9w3yx4j2","slide":7,"text":"55%  RED LIGHT • PHONE-FIRST","textPreview":"55%  RED LIGHT • PHONE-FIRST","textChars":28,"textLines":1,"bbox":[100,356,580,28]}
+{"kind":"shape","id":"sh/obuh4zih","slide":7,"bbox":[710,334,478,74]}
+{"kind":"textbox","id":"sh/2x8nmlkn","slide":7,"text":"45%  GREEN LIGHT • BOTH","textPreview":"45%  GREEN LIGHT • BOTH","textChars":23,"textLines":1,"bbox":[735,356,428,28]}
+{"kind":"shape","id":"sh/nyhofql8","slide":7,"bbox":[72,438,535,140]}
+{"kind":"textbox","id":"sh/ozq5ov2t","slide":7,"text":"RED LIGHT","textPreview":"RED LIGHT","textChars":9,"textLines":1,"bbox":[98,460,140,22]}
+{"kind":"textbox","id":"sh/p0j6h03e","slide":7,"text":"Android UI • camera and microphone flows • on-device inference • end-to-end phone testing","textPreview":"Android UI • camera and microphone flows • on-device inference • end-to-end phone testing","textChars":89,"textLines":1,"bbox":[98,496,470,66]}
+{"kind":"shape","id":"sh/a1s7q5kz","slide":7,"bbox":[625,438,563,140]}
+{"kind":"textbox","id":"sh/b21ojalk","slide":7,"text":"GREEN LIGHT","textPreview":"GREEN LIGHT","textChars":11,"textLines":1,"bbox":[651,460,160,22]}
+{"kind":"textbox","id":"sh/c3apsv25","slide":7,"text":"Model preparation • laptop-heavy integration • debugging • performance tuning • demo polish","textPreview":"Model preparation • laptop-heavy integration • debugging • performance tuning • demo polish","textChars":91,"textLines":1,"bbox":[651,496,500,66]}
+{"kind":"shape","id":"sh/xoj6l03q","slide":7,"bbox":[72,608,150,36]}
+{"kind":"textbox","id":"sh/yps7u5kv","slide":7,"text":"OFFICE KIT","textPreview":"OFFICE KIT","textChars":10,"textLines":1,"bbox":[84,616,126,20]}
+{"kind":"textbox","id":"sh/zq1onalg","slide":7,"text":"Screen mirror • shared clipboard • file transfer • remote input","textPreview":"Screen mirror • shared clipboard • file transfer • remote input","textChars":63,"textLines":1,"bbox":[244,615,650,24]}
+{"kind":"textbox","id":"sh/vulobaho","slide":7,"text":"10% OF SCORE","textPreview":"10% OF SCORE","textChars":12,"textLines":1,"bbox":[1000,615,188,24]}
+{"kind":"notes","id":"nt/3scez6","slide":7,"text":""}
+{"kind":"slide","id":"sl/q8616w","slide":8,"title":"TEAM ANKOR","textShapes":27}
+{"kind":"textbox","id":"sh/ry5w7q50","slide":8,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/sjed0v65","slide":8,"text":"DEMO + SCALE","textPreview":"DEMO + SCALE","textChars":12,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/dkne90nq","slide":8,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/itcvulo3","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/3u5w3q5o","slide":8,"text":"A FOCUSED DEMO PROVES THE PRODUCT TODAY—AND ITS SCALE TOMORROW","textPreview":"A FOCUSED DEMO PROVES THE PRODUCT TODAY—AND ITS SCALE TOMORROW","textChars":62,"textLines":1,"bbox":[72,100,520,24]}
+{"kind":"textbox","id":"sh/4vedwv69","slide":8,"text":"One visible discrepancy is more persuasive than ten unfinished features.","textPreview":"One visible discrepancy is more persuasive than ten unfinished features.","textChars":72,"textLines":1,"bbox":[72,136,780,110]}
+{"kind":"shape","id":"sh/5wne50nu","slide":8,"bbox":[72,335,530,265]}
+{"kind":"textbox","id":"sh/upcvqlo7","slide":8,"text":"LIVE DEMO","textPreview":"LIVE DEMO","textChars":9,"textLines":1,"bbox":[104,362,180,24]}
+{"kind":"shape","id":"sh/vqlcz65s","slide":8,"bbox":[104,404,28,28]}
+{"kind":"textbox","id":"sh/jqdof61g","slide":8,"text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[104,410,28,16]}
+{"kind":"textbox","id":"sh/yp4nm1kv","slide":8,"text":"Capture the no-cost EMI ad","textPreview":"Capture the no-cost EMI ad","textChars":26,"textLines":1,"bbox":[148,407,405,22]}
+{"kind":"shape","id":"sh/lsf6hgjm","slide":8,"bbox":[104,440,28,28]}
+{"kind":"textbox","id":"sh/kr65ob21","slide":8,"text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[104,446,28,16]}
+{"kind":"textbox","id":"sh/7uxojq1s","slide":8,"text":"Record a consented explanation","textPreview":"Record a consented explanation","textChars":30,"textLines":1,"bbox":[148,443,405,22]}
+{"kind":"shape","id":"sh/6to7qlk7","slide":8,"bbox":[104,476,28,28]}
+{"kind":"textbox","id":"sh/twf6lgji","slide":8,"text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[104,482,28,16]}
+{"kind":"textbox","id":"sh/8v6psv2d","slide":8,"text":"Scan invoice / KFS","textPreview":"Scan invoice / KFS","textChars":18,"textLines":1,"bbox":[148,479,405,22]}
+{"kind":"shape","id":"sh/nyto7ml8","slide":8,"bbox":[104,512,28,28]}
+{"kind":"textbox","id":"sh/mxknehk3","slide":8,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[104,518,28,16]}
+{"kind":"textbox","id":"sh/qdsrmp4b","slide":8,"text":"Reveal the extra ₹2,148","textPreview":"Reveal the extra ₹2,148","textChars":23,"textLines":1,"bbox":[148,515,405,22]}
+{"kind":"shape","id":"sh/re18fulw","slide":8,"bbox":[104,548,28,28]}
+{"kind":"textbox","id":"sh/cfa9ozmh","slide":8,"text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[104,554,28,16]}
+{"kind":"textbox","id":"sh/dgjah432","slide":8,"text":"Create clarification card","textPreview":"Create clarification card","textChars":25,"textLines":1,"bbox":[148,551,405,22]}
+{"kind":"textbox","id":"sh/2p8rip4f","slide":8,"text":"SCALE THE SAME ENGINE","textPreview":"SCALE THE SAME ENGINE","textChars":21,"textLines":1,"bbox":[660,352,330,24]}
+{"kind":"shape","id":"sh/3q18bul0","slide":8,"bbox":[660,394,220,36]}
+{"kind":"textbox","id":"sh/4ra9kfml","slide":8,"text":"Appliances","textPreview":"Appliances","textChars":10,"textLines":1,"bbox":[674,402,192,20]}
+{"kind":"shape","id":"sh/pcjqdk3q","slide":8,"bbox":[910,394,220,36]}
+{"kind":"textbox","id":"sh/ul8re543","slide":8,"text":"Insurance","textPreview":"Insurance","textChars":9,"textLines":1,"bbox":[924,402,192,20]}
+{"kind":"shape","id":"sh/vmh87alo","slide":8,"bbox":[660,442,220,36]}
+{"kind":"textbox","id":"sh/xgnud8n6","slide":8,"text":"Telecom","textPreview":"Telecom","textChars":7,"textLines":1,"bbox":[674,450,192,20]}
+{"kind":"shape","id":"sh/wfetk36l","slide":8,"bbox":[910,442,220,36]}
+{"kind":"textbox","id":"sh/be5cbi5g","slide":8,"text":"Travel","textPreview":"Travel","textChars":6,"textLines":1,"bbox":[924,450,192,20]}
+{"kind":"shape","id":"sh/adwbidov","slide":8,"bbox":[660,490,220,36]}
+{"kind":"textbox","id":"sh/9cnu98na","slide":8,"text":"Rentals","textPreview":"Rentals","textChars":7,"textLines":1,"bbox":[674,498,192,20]}
+{"kind":"shape","id":"sh/obetg36p","slide":8,"bbox":[910,490,220,36]}
+{"kind":"textbox","id":"sh/na5c7y54","slide":8,"text":"Education","textPreview":"Education","textChars":9,"textLines":1,"bbox":[924,498,192,20]}
+{"kind":"shape","id":"sh/m9cbetoj","slide":8,"bbox":[660,538,220,36]}
+{"kind":"textbox","id":"sh/183ulony","slide":8,"text":"Healthcare","textPreview":"Healthcare","textChars":10,"textLines":1,"bbox":[674,546,192,20]}
+{"kind":"shape","id":"sh/07utcj6t","slide":8,"bbox":[910,538,220,36]}
+{"kind":"textbox","id":"sh/0bmlcn6p","slide":8,"text":"Subscriptions","textPreview":"Subscriptions","textChars":13,"textLines":1,"bbox":[924,546,192,20]}
+{"kind":"textbox","id":"sh/1cv2lsna","slide":8,"text":"RUBRIC FIT","textPreview":"RUBRIC FIT","textChars":10,"textLines":1,"bbox":[660,598,110,20]}
+{"kind":"textbox","id":"sh/e943qxoj","slide":8,"text":"30 Quality  •  20 Novelty  •  15 Tech  •  15 Phone  •  10 Office Kit  •  10 Demo","textPreview":"30 Quality  •  20 Novelty  •  15 Tech  •  15 Phone  •  10 Office Kit  •  10 Demo","textChars":80,"textLines":1,"bbox":[786,596,405,28]}
+{"kind":"notes","id":"nt/q8616w","slide":8,"text":""}
+{"kind":"slide","id":"sl/990ckr","slide":9,"title":"TEAM ANKOR","textShapes":14}
+{"kind":"textbox","id":"sh/s7q5sred","slide":9,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[58,31,170,24]}
+{"kind":"textbox","id":"sh/76h4zmxs","slide":9,"text":"CONCLUSION","textPreview":"CONCLUSION","textChars":10,"textLines":1,"bbox":[1000,31,200,24]}
+{"kind":"shape","id":"sh/658nqhw7","slide":9,"bbox":[58,62,1164,2]}
+{"kind":"textbox","id":"sh/hczm5wfu","slide":9,"text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1175,670,46,22]}
+{"kind":"textbox","id":"sh/gbq5wre9","slide":9,"text":"DealTwin can become the trust layer\nbetween a promise and a payment.","textPreview":"DealTwin can become the trust layer | between a promise and a payment.","textChars":68,"textLines":2,"bbox":[72,118,900,116]}
+{"kind":"shape","id":"sh/fah43mxo","slide":9,"bbox":[72,300,340,185]}
+{"kind":"textbox","id":"sh/u98nu1wj","slide":9,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[96,324,48,22]}
+{"kind":"textbox","id":"sh/p0jm9gf6","slide":9,"text":"Real utility","textPreview":"Real utility","textChars":12,"textLines":1,"bbox":[96,366,280,30]}
+{"kind":"textbox","id":"sh/4fa50bel","slide":9,"text":"A familiar problem with immediate financial impact.","textPreview":"A familiar problem with immediate financial impact.","textChars":51,"textLines":1,"bbox":[96,416,286,50]}
+{"kind":"shape","id":"sh/qx8vm9sz","slide":9,"bbox":[452,300,340,185]}
+{"kind":"textbox","id":"sh/ryhwvetk","slide":9,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[476,324,48,22]}
+{"kind":"textbox","id":"sh/czqdoja5","slide":9,"text":"Defensible output","textPreview":"Defensible output","textChars":17,"textLines":1,"bbox":[476,366,280,30]}
+{"kind":"textbox","id":"sh/d0zexobq","slide":9,"text":"Evidence links and deterministic calculations build trust.","textPreview":"Evidence links and deterministic calculations build trust.","textChars":58,"textLines":1,"bbox":[476,416,286,50]}
+{"kind":"shape","id":"sh/elsvqtsb","slide":9,"bbox":[832,300,340,185]}
+{"kind":"textbox","id":"sh/zm1wzytw","slide":9,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[856,324,48,22]}
+{"kind":"textbox","id":"sh/0naxsjah","slide":9,"text":"Built to scale","textPreview":"Built to scale","textChars":14,"textLines":1,"bbox":[856,366,280,30]}
+{"kind":"textbox","id":"sh/1oje1obm","slide":9,"text":"The same engine works across consumer contracts.","textPreview":"The same engine works across consumer contracts.","textChars":48,"textLines":1,"bbox":[856,416,286,50]}
+{"kind":"shape","id":"sh/u5ovepsr","slide":9,"bbox":[72,548,1100,82]}
+{"kind":"textbox","id":"sh/fqxwnutc","slide":9,"text":"Companies remember what customers signed. DealTwin remembers what they were promised.","textPreview":"Companies remember what customers signed. DealTwin remembers what they were promised.","textChars":85,"textLines":1,"bbox":[104,572,1036,34]}
+{"kind":"notes","id":"nt/990ckr","slide":9,"text":""}
+{"kind":"slide","id":"sl/vv6w5n","slide":10,"title":"TEAM ANKOR","textShapes":10}
+{"kind":"textbox","id":"sh/ypsfi1oz","slide":10,"text":"TEAM ANKOR","textPreview":"TEAM ANKOR","textChars":10,"textLines":1,"bbox":[72,60,220,26]}
+{"kind":"textbox","id":"sh/lc3ydwna","slide":10,"text":"Thank you.","textPreview":"Thank you.","textChars":10,"textLines":1,"bbox":[72,214,660,92]}
+{"kind":"textbox","id":"sh/kbaxkr6p","slide":10,"text":"Remember the promise. Verify the deal.","textPreview":"Remember the promise. Verify the deal.","textChars":38,"textLines":1,"bbox":[72,322,680,46]}
+{"kind":"shape","id":"sh/bm1w7m58","slide":10,"bbox":[72,430,285,52]}
+{"kind":"textbox","id":"sh/alsfehon","slide":10,"text":"QUESTIONS + LIVE DEMO","textPreview":"QUESTIONS + LIVE DEMO","textChars":21,"textLines":1,"bbox":[88,446,253,22]}
+{"kind":"shape","id":"sh/xoje9wne","slide":10,"bbox":[890,140,245,440]}
+{"kind":"shape","id":"sh/cnaxgr6t","slide":10,"bbox":[910,176,205,360]}
+{"kind":"shape","id":"sh/nihw325c","slide":10,"bbox":[932,220,160,36]}
+{"kind":"textbox","id":"sh/2h8fahor","slide":10,"text":"PROMISE LEDGER","textPreview":"PROMISE LEDGER","textChars":14,"textLines":1,"bbox":[944,228,136,20]}
+{"kind":"shape","id":"sh/8vq9s72l","slide":10,"bbox":[932,292,160,36]}
+{"kind":"textbox","id":"sh/9wzalcj6","slide":10,"text":"KEPT","textPreview":"KEPT","textChars":4,"textLines":1,"bbox":[944,300,136,20]}
+{"kind":"shape","id":"sh/mt8rqxkv","slide":10,"bbox":[932,344,160,36]}
+{"kind":"textbox","id":"sh/nuhsj21g","slide":10,"text":"CHANGED","textPreview":"CHANGED","textChars":7,"textLines":1,"bbox":[944,352,136,20]}
+{"kind":"shape","id":"sh/0r69on2p","slide":10,"bbox":[932,396,160,36]}
+{"kind":"textbox","id":"sh/lszahsja","slide":10,"text":"TRUE COST","textPreview":"TRUE COST","textChars":9,"textLines":1,"bbox":[944,404,136,20]}
+{"kind":"textbox","id":"sh/ypormdkj","slide":10,"text":"DealTwin","textPreview":"DealTwin","textChars":8,"textLines":1,"bbox":[932,472,160,28]}
+{"kind":"textbox","id":"sh/zqxsfi14","slide":10,"text":"10 / 10","textPreview":"10 / 10","textChars":7,"textLines":1,"bbox":[1120,672,80,20]}
+{"kind":"notes","id":"nt/vv6w5n","slide":10,"text":""}

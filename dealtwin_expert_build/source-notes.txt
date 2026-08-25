@@ -1,0 +1,10 @@
+Official implementation references used in speaker notes:
+- Android application architecture: https://developer.android.com/topic/architecture
+- CameraX image capture: https://developer.android.com/media/camera/camerax/take-photo
+- ML Kit Text Recognition: https://developers.google.com/ml-kit/vision/text-recognition/v2/android
+- Android Keystore: https://developer.android.com/privacy-and-security/keystore
+- WorkManager: https://developer.android.com/reference/androidx/work/WorkManager
+- ONNX Runtime mobile: https://onnxruntime.ai/docs/tutorials/mobile/
+- ONNX Runtime QNN provider: https://onnxruntime.ai/docs/execution-providers/QNN-ExecutionProvider.html
+
+All monetary values and match-score weights are explicitly presented as prototype configuration or constructed demo data, not external statistics.
