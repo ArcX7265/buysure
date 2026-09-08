@@ -7,9 +7,10 @@ import { PurchaseGuardian } from './purchase-guardian';
 import { DecisionLab } from './decision-lab';
 import { CaseHub } from './case-hub';
 import { CommerceLab } from './commerce-lab';
+import { IntegrityLab } from './integrity-lab';
 
 type Lang = 'en' | 'hi';
-type Panel = 'case' | 'commerce' | 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
+type Panel = 'integrity' | 'case' | 'commerce' | 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
 type Marker = { text: string; x: number; y: number; width: number; height: number };
 type NativeTextDetector = { detect: (image: ImageBitmap) => Promise<{ rawValue: string; boundingBox: { x: number; y: number; width: number; height: number } }[]> };
 
@@ -30,7 +31,7 @@ const scenarioResults = {
 
 export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { language: Lang; onBack: () => void; onImportClaims: (text: string) => void }) {
   const l = (en: string, hi: string) => language === 'hi' ? hi : en;
-  const [panel, setPanel] = useState<Panel>('case');
+  const [panel, setPanel] = useState<Panel>('integrity');
   const [scenario, setScenario] = useState<keyof typeof scenarioResults>('theft');
   const [certificate, setCertificate] = useState('');
   const [member, setMember] = useState(l('Me', 'मैं'));
@@ -134,6 +135,7 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
   }
 
   const tabs: { id: Panel; en: string; hi: string }[] = [
+    { id: 'integrity', en: 'Integrity', hi: 'सत्यापन' },
     { id: 'case', en: 'Case Hub', hi: 'मामला हब' },
     { id: 'commerce', en: 'Commerce', hi: 'कॉमर्स' },
     { id: 'story', en: 'Story', hi: 'कहानी' },
@@ -154,6 +156,8 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
     <div className="suite-tabs" role="tablist" aria-label={l('Trust Suite modules', 'ट्रस्ट सूट मॉड्यूल')}>
       {tabs.map((tab) => <button key={tab.id} className={panel === tab.id ? 'active' : ''} onClick={() => setPanel(tab.id)}>{l(tab.en, tab.hi)}</button>)}
     </div>
+
+    {panel === 'integrity' && <IntegrityLab language={language} />}
 
     {panel === 'case' && <CaseHub language={language} />}
 
