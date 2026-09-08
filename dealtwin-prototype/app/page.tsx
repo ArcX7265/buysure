@@ -89,7 +89,7 @@ function reconcile(items: PromiseItem[], proofText: string): Finding[] {
 async function extractPdf(file: File) {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
   pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-  const document = await pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()), isEvalSupported: false }).promise;
+  const document = await pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()) }).promise;
   const pages: string[] = [];
   for (let pageNumber = 1; pageNumber <= document.numPages; pageNumber += 1) {
     const page = await document.getPage(pageNumber); const content = await page.getTextContent();
@@ -141,7 +141,7 @@ export default function Home() {
   }
   function handleImage(event: ChangeEvent<HTMLInputElement>) { const file = event.target.files?.[0]; if (!file) return; addSource('image', file.name, 'Visual evidence secured'); flash('Image captured—describe or paste the visible promise to confirm it'); event.target.value = ''; }
   function startVoice() {
-    type SpeechEngine = { lang: string; interimResults: boolean; onresult: (event: { results: { 0: { 0: { transcript: string } } }[] }) => void; onend: () => void; onerror: () => void; start: () => void };
+    type SpeechEngine = { lang: string; interimResults: boolean; onresult: (event: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void; onend: () => void; onerror: () => void; start: () => void };
     const browserWindow = window as typeof window & { SpeechRecognition?: new () => SpeechEngine; webkitSpeechRecognition?: new () => SpeechEngine };
     const SpeechRecognition = browserWindow.SpeechRecognition || browserWindow.webkitSpeechRecognition;
     if (!SpeechRecognition) { flash('Voice recognition is unavailable here—type the promise instead'); return; }
