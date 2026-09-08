@@ -6,9 +6,10 @@ import { LifecycleLab } from './lifecycle-lab';
 import { PurchaseGuardian } from './purchase-guardian';
 import { DecisionLab } from './decision-lab';
 import { CaseHub } from './case-hub';
+import { CommerceLab } from './commerce-lab';
 
 type Lang = 'en' | 'hi';
-type Panel = 'case' | 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
+type Panel = 'case' | 'commerce' | 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
 type Marker = { text: string; x: number; y: number; width: number; height: number };
 type NativeTextDetector = { detect: (image: ImageBitmap) => Promise<{ rawValue: string; boundingBox: { x: number; y: number; width: number; height: number } }[]> };
 
@@ -134,6 +135,7 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
 
   const tabs: { id: Panel; en: string; hi: string }[] = [
     { id: 'case', en: 'Case Hub', hi: 'मामला हब' },
+    { id: 'commerce', en: 'Commerce', hi: 'कॉमर्स' },
     { id: 'story', en: 'Story', hi: 'कहानी' },
     { id: 'decision', en: 'Decision', hi: 'निर्णय' },
     { id: 'guardian', en: 'Guardian', hi: 'गार्डियन' },
@@ -154,6 +156,8 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
     </div>
 
     {panel === 'case' && <CaseHub language={language} />}
+
+    {panel === 'commerce' && <CommerceLab language={language} />}
 
     {panel === 'story' && <StoryMode language={language} />}
 
