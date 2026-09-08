@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import { PwaRegister } from './pwa-register';
 
 export const metadata: Metadata = {
   title: 'BuySure — Purchase Trust Layer',
   description: 'Capture seller promises, assess purchase risk, verify final documents, and create a claim-ready evidence pack.',
+  manifest: '/manifest.webmanifest',
   openGraph: {
     title: 'BuySure — Buy with evidence, not assumptions.',
     description: 'A privacy-first purchase trust layer from promise capture to claim-ready proof.',
@@ -18,5 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body><PwaRegister />{children}</body></html>;
 }

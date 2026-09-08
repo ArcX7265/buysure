@@ -5,9 +5,10 @@ import { StoryMode } from './story-mode';
 import { LifecycleLab } from './lifecycle-lab';
 import { PurchaseGuardian } from './purchase-guardian';
 import { DecisionLab } from './decision-lab';
+import { CaseHub } from './case-hub';
 
 type Lang = 'en' | 'hi';
-type Panel = 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
+type Panel = 'case' | 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
 type Marker = { text: string; x: number; y: number; width: number; height: number };
 type NativeTextDetector = { detect: (image: ImageBitmap) => Promise<{ rawValue: string; boundingBox: { x: number; y: number; width: number; height: number } }[]> };
 
@@ -28,7 +29,7 @@ const scenarioResults = {
 
 export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { language: Lang; onBack: () => void; onImportClaims: (text: string) => void }) {
   const l = (en: string, hi: string) => language === 'hi' ? hi : en;
-  const [panel, setPanel] = useState<Panel>('story');
+  const [panel, setPanel] = useState<Panel>('case');
   const [scenario, setScenario] = useState<keyof typeof scenarioResults>('theft');
   const [certificate, setCertificate] = useState('');
   const [member, setMember] = useState(l('Me', 'मैं'));
@@ -132,6 +133,7 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
   }
 
   const tabs: { id: Panel; en: string; hi: string }[] = [
+    { id: 'case', en: 'Case Hub', hi: 'मामला हब' },
     { id: 'story', en: 'Story', hi: 'कहानी' },
     { id: 'decision', en: 'Decision', hi: 'निर्णय' },
     { id: 'guardian', en: 'Guardian', hi: 'गार्डियन' },
@@ -145,11 +147,13 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
 
   return <section className="screen suite-screen">
     <button className="back" onClick={onBack}>← {l('Home', 'होम')}</button>
-    <div className="suite-heading"><div><p className="eyebrow">BUYSURE TRUST SUITE</p><h2>{l('One purchase. A lifetime of proof.', 'एक खरीद। जीवनभर का प्रमाण।')}</h2></div><span>23 USP</span></div>
+    <div className="suite-heading"><div><p className="eyebrow">BUYSURE TRUST SUITE</p><h2>{l('One purchase. A lifetime of proof.', 'एक खरीद। जीवनभर का प्रमाण।')}</h2></div><span>{l('ONE SYSTEM', 'एक प्रणाली')}</span></div>
     <p className="intro">{l('Prevent misleading purchases, preserve evidence and stay claim-ready from checkout to resale.', 'भ्रामक खरीद रोकें, प्रमाण सुरक्षित रखें और चेकआउट से पुनर्विक्रय तक दावा-तैयार रहें।')}</p>
     <div className="suite-tabs" role="tablist" aria-label={l('Trust Suite modules', 'ट्रस्ट सूट मॉड्यूल')}>
       {tabs.map((tab) => <button key={tab.id} className={panel === tab.id ? 'active' : ''} onClick={() => setPanel(tab.id)}>{l(tab.en, tab.hi)}</button>)}
     </div>
+
+    {panel === 'case' && <CaseHub language={language} />}
 
     {panel === 'story' && <StoryMode language={language} />}
 

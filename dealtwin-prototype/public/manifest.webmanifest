@@ -1,0 +1,12 @@
+{
+  "name": "BuySure — Purchase Trust Layer",
+  "short_name": "BuySure",
+  "description": "Capture promises, verify proof and stay claim-ready.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f0e7",
+  "theme_color": "#071421",
+  "icons": [
+    { "src": "/buysure-icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
