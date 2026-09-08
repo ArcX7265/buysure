@@ -2,9 +2,12 @@
 
 import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 import { StoryMode } from './story-mode';
+import { LifecycleLab } from './lifecycle-lab';
+import { PurchaseGuardian } from './purchase-guardian';
+import { DecisionLab } from './decision-lab';
 
 type Lang = 'en' | 'hi';
-type Panel = 'story' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
+type Panel = 'story' | 'decision' | 'guardian' | 'lifecycle' | 'lens' | 'passport' | 'drift' | 'simulate' | 'timeline' | 'family' | 'merchant' | 'insights';
 type Marker = { text: string; x: number; y: number; width: number; height: number };
 type NativeTextDetector = { detect: (image: ImageBitmap) => Promise<{ rawValue: string; boundingBox: { x: number; y: number; width: number; height: number } }[]> };
 
@@ -130,6 +133,9 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
 
   const tabs: { id: Panel; en: string; hi: string }[] = [
     { id: 'story', en: 'Story', hi: 'कहानी' },
+    { id: 'decision', en: 'Decision', hi: 'निर्णय' },
+    { id: 'guardian', en: 'Guardian', hi: 'गार्डियन' },
+    { id: 'lifecycle', en: 'Lifecycle', hi: 'जीवनचक्र' },
     { id: 'lens', en: 'Lens', hi: 'लेंस' },
     { id: 'passport', en: 'Passport', hi: 'पासपोर्ट' }, { id: 'drift', en: 'Drift', hi: 'बदलाव' },
     { id: 'simulate', en: 'Simulate', hi: 'सिमुलेट' }, { id: 'timeline', en: 'Timeline', hi: 'समयरेखा' },
@@ -139,13 +145,19 @@ export function AdvancedTrustSuite({ language, onBack, onImportClaims }: { langu
 
   return <section className="screen suite-screen">
     <button className="back" onClick={onBack}>← {l('Home', 'होम')}</button>
-    <div className="suite-heading"><div><p className="eyebrow">BUYSURE TRUST SUITE</p><h2>{l('One purchase. A lifetime of proof.', 'एक खरीद। जीवनभर का प्रमाण।')}</h2></div><span>12 USP</span></div>
+    <div className="suite-heading"><div><p className="eyebrow">BUYSURE TRUST SUITE</p><h2>{l('One purchase. A lifetime of proof.', 'एक खरीद। जीवनभर का प्रमाण।')}</h2></div><span>23 USP</span></div>
     <p className="intro">{l('Prevent misleading purchases, preserve evidence and stay claim-ready from checkout to resale.', 'भ्रामक खरीद रोकें, प्रमाण सुरक्षित रखें और चेकआउट से पुनर्विक्रय तक दावा-तैयार रहें।')}</p>
     <div className="suite-tabs" role="tablist" aria-label={l('Trust Suite modules', 'ट्रस्ट सूट मॉड्यूल')}>
       {tabs.map((tab) => <button key={tab.id} className={panel === tab.id ? 'active' : ''} onClick={() => setPanel(tab.id)}>{l(tab.en, tab.hi)}</button>)}
     </div>
 
     {panel === 'story' && <StoryMode language={language} />}
+
+    {panel === 'decision' && <DecisionLab language={language} />}
+
+    {panel === 'guardian' && <PurchaseGuardian language={language} />}
+
+    {panel === 'lifecycle' && <LifecycleLab language={language} />}
 
     {panel === 'lens' && <div className="suite-panel lens-panel">
       <div className="lens-actions"><button onClick={() => lensInput.current?.click()}><span>▣</span><strong>{l('Capture / upload', 'कैप्चर / अपलोड')}</strong><small>{l('Real image evidence', 'वास्तविक चित्र प्रमाण')}</small></button><button onClick={loadLensDemo}><span>◇</span><strong>{l('Guided demo', 'निर्देशित डेमो')}</strong><small>{l('Reliable presentation path', 'विश्वसनीय प्रस्तुति प्रवाह')}</small></button></div>

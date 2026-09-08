@@ -17,7 +17,6 @@ ROOT = Path(__file__).resolve().parent
 WORK = ROOT / "_report_work"
 WORK.mkdir(exist_ok=True)
 OUTPUT = ROOT / "DealTwin_Super_Detailed_Project_Report.docx"
-
 # Selected design preset: standard_business_brief.
 # Named visual override: DealTwin accent gold (#F2B01E) and deep ink (#0B2545)
 # are used for cover/kickers/callouts while preset geometry and spacing remain intact.

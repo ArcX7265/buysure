@@ -74,7 +74,7 @@ const hi: Record<string, string> = {
   'No saved checks yet': 'अभी कोई जाँच सुरक्षित नहीं है', 'Complete a promise-to-proof comparison to create one.': 'एक जाँच बनाने के लिए वादे और प्रमाण की तुलना पूरी करें।',
   'Start a new check ': 'नई जाँच शुरू करें ', 'Local-first processing · user-selected evidence only': 'स्थानीय प्रसंस्करण · केवल उपयोगकर्ता द्वारा चुने प्रमाण',
   'SOURCE-BOUND EVIDENCE': 'स्रोत-बद्ध प्रमाण', 'Exact extracted clause': 'निकाली गई सटीक धारा', 'Home': 'होम', 'Check': 'जाँच', 'Suite': 'सूट', 'Vault': 'तिजोरी',
-  'BUYSURE 2.0 · TEAM ANKOR': 'BUYSURE 2.0 · टीम ANKOR', 'From persuasive promise to portable proof.': 'लुभावने वादे से पोर्टेबल प्रमाण तक।',
+  'BUYSURE · TEAM ANKOR': 'BUYSURE · टीम ANKOR', 'From persuasive promise to portable proof.': 'लुभावने वादे से पोर्टेबल प्रमाण तक।',
   'A consumer trust workflow designed for the moments before payment, after delivery, and before a claim deadline.': 'भुगतान से पहले, डिलीवरी के बाद और दावे की समय-सीमा से पहले के लिए बनाया गया उपभोक्ता भरोसा प्रवाह।',
   'Promise Ledger': 'वादा खाता', 'Camera, voice, text and PDFs become user-confirmed obligations.': 'कैमरा, आवाज़, टेक्स्ट और पीडीएफ उपयोगकर्ता-पुष्ट दायित्व बनते हैं।',
   'Explainable Risk': 'समझने योग्य जोखिम', 'Disclosure gaps become precise questions before payment.': 'जानकारी की कमियाँ भुगतान से पहले सटीक प्रश्न बनती हैं।',
