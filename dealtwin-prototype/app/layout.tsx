@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'DealTwin — Promise-to-Proof Verification',
-  description: 'A phone-first assistant that checks risky offers before purchase and verifies whether final documents match what the seller promised.',
+  title: 'BuySure — Purchase Trust Layer',
+  description: 'Capture seller promises, assess purchase risk, verify final documents, and create a claim-ready evidence pack.',
   openGraph: {
-    title: 'DealTwin — Don’t trust the deal. Verify it.',
-    description: 'Check offers before purchase, compare promise against proof, and keep every verdict linked to its source.',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'DealTwin promise-to-proof verification' }],
+    title: 'BuySure — Buy with evidence, not assumptions.',
+    description: 'A privacy-first purchase trust layer from promise capture to claim-ready proof.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Promise-to-proof purchase verification by Team ANKOR' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DealTwin — Know the deal before you sign',
-    description: 'Phone-first promise-to-proof verification by Team ANKOR.',
+    title: 'BuySure — Purchase Trust Layer',
+    description: 'Capture the promise. Verify the proof. Be ready to claim.',
     images: ['/og.png'],
   },
 };

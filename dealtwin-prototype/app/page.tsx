@@ -1,63 +1,92 @@
 'use client';
 
-import { ChangeEvent, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
+import { Translate } from './i18n';
+import { AdvancedTrustSuite } from './advanced-suite';
 
-type Stage = 'home' | 'capture' | 'review' | 'documents' | 'result';
-type Mode = 'pre' | 'post';
-type EvidenceKind = 'image' | 'audio' | 'pdf';
-type Verdict = 'CHANGED' | 'MISSING' | 'KEPT' | 'UNVERIFIED';
-type Claim = { promise: string; normalized: string; finalEvidence: string; verdict: Verdict; detail: string; confidence: number; sourceExcerpt?: string };
-type FieldCheck = { label: string; present: boolean; reason: string };
-type PdfAnalysis = { fileName: string; pageCount: number; text: string; excerpt: string; promiseDetected: boolean; contradictionDetected: boolean; riskScore: number; fields: FieldCheck[]; questions: string[] };
+type View = 'home' | 'capture' | 'ledger' | 'risk' | 'proof' | 'results' | 'claim' | 'vault' | 'suite';
+type PromiseCategory = 'Insurance' | 'Warranty' | 'Finance' | 'Cashback' | 'Return' | 'Delivery' | 'Other';
+type Verdict = 'VERIFIED' | 'MISSING' | 'CONTRADICTED' | 'UNVERIFIED';
+type PromiseItem = { id: string; label: string; category: PromiseCategory; source: string; confirmed: boolean };
+type Finding = { promise: PromiseItem; verdict: Verdict; detail: string; excerpt: string; confidence: number };
+type SourceItem = { id: string; kind: 'image' | 'voice' | 'pdf' | 'text'; name: string; status: string };
+type SavedCase = { id: string; title: string; createdAt: string; score: number; issues: number; promises: number };
 
-const demoClaims: Claim[] = [
-  { promise: 'No-cost EMI for 12 months', normalized: 'financing_cost = ₹0', finalEvidence: 'Invoice + KFS', verdict: 'CHANGED', detail: '₹999 processing fee + ₹749 GST detected', confidence: 98 },
-  { promise: 'Free theft insurance', normalized: 'insurance.benefit = FREE', finalEvidence: 'Insurance addendum', verdict: 'MISSING', detail: 'Protection is optional; no policy was issued', confidence: 97, sourceExcerpt: 'Optional theft protection is not included in this transaction.' },
-  { promise: 'Two-year manufacturer warranty', normalized: 'warranty.months = 24', finalEvidence: 'Warranty card', verdict: 'KEPT', detail: '24-month coverage confirmed', confidence: 99 },
-];
-const stageIndex: Record<Stage, number> = { home: 0, capture: 1, review: 2, documents: 3, result: 4 };
-const evidenceLabels: Record<EvidenceKind, { title: string; subtitle: string; glyph: string }> = {
-  image: { title: 'Scan an offer', subtitle: 'Ad, poster, chat or price tag', glyph: '▣' },
-  audio: { title: 'Record a promise', subtitle: 'With seller consent', glyph: '◉' },
-  pdf: { title: 'Import a promise PDF', subtitle: 'Brochure, quotation or offer', glyph: '⇧' },
-};
-const positivePatterns = {
-  insurer: /(?:named insurer|underwritten by|insurer)\s*[:\-]\s*(?!not\b|none\b|n\/?a\b)[a-z][a-z &.]{2,50}/i,
-  policy: /policy\s*(?:number|no\.?|id|reference)\s*[:#\-]\s*(?!not\b|none\b|pending\b)[a-z0-9][a-z0-9\-/]{4,}/i,
-  dates: /(?:coverage|policy)\s*(?:dates?|period|from)\s*[:\-]?\s*\d{1,2}[\s\-/][a-z0-9]{2,9}[\s\-/]\d{2,4}/i,
-  exclusions: /(?:exclusions?|deductible)\s*[:\-]\s*(?!not\b|none\b|unavailable\b).{3,80}/i,
-  claims: /claims?\s*(?:contact|helpline|email|process)\s*[:\-]\s*(?!not\b|none\b|unavailable\b).{3,80}/i,
+const demoOffer = 'Seller promises free theft insurance, no-cost EMI for 12 months, two-year manufacturer warranty, ₹10,000 cashback, and a 7-day return window.';
+const demoProof = 'Insurance Addendum. Optional theft protection is not included in this transaction. No policy was issued. Invoice: ₹999 processing fee plus ₹749 GST. Manufacturer warranty: 24 months. Cashback subject to an eligible bank card. Return allowed within 7 days for manufacturing defects only.';
+const categories: PromiseCategory[] = ['Insurance', 'Warranty', 'Finance', 'Cashback', 'Return', 'Delivery', 'Other'];
+const copy = {
+  en: { home: 'Buy with evidence, not assumptions.', start: 'Start a purchase check', result: 'Your purchase needs attention.', protect: 'Prepare a claim-ready evidence pack' },
+  hi: { home: 'अनुमान पर नहीं, सबूत के साथ खरीदें।', start: 'खरीद की जाँच शुरू करें', result: 'आपकी खरीद पर ध्यान देने की ज़रूरत है।', protect: 'दावे के लिए प्रमाण पैक तैयार करें' },
 };
 
-function cleanText(value: string) { return value.replace(/\s+/g, ' ').replace(/\u0000/g, '').trim(); }
-function makeExcerpt(text: string) {
-  const cleaned = cleanText(text); const lower = cleaned.toLowerCase();
-  const match = ['not included', 'free theft', 'theft protection', 'no policy', 'insurance'].map((anchor) => lower.indexOf(anchor)).find((index) => index !== -1) ?? 0;
-  return cleaned.slice(Math.max(0, match - 70), Math.min(cleaned.length, match + 210)) || 'No readable text was extracted.';
+function id() { return Math.random().toString(36).slice(2, 9); }
+function normalize(value: string) { return value.replace(/\s+/g, ' ').trim(); }
+function excerptAround(text: string, terms: string[]) {
+  const cleaned = normalize(text); const lower = cleaned.toLowerCase();
+  const position = terms.map((term) => lower.indexOf(term)).find((index) => index >= 0) ?? 0;
+  return cleaned.slice(Math.max(0, position - 55), Math.min(cleaned.length, position + 210)) || 'No readable source excerpt available.';
 }
-function analyzePdfText(fileName: string, pageCount: number, rawText: string): PdfAnalysis {
-  const text = cleanText(rawText);
-  const promiseDetected = /(?:free|complimentary|included)\s+(?:theft|device|accidental)?\s*(?:insurance|protection)/i.test(text);
-  const contradictionDetected = /(not included|not issued|no policy (?:was )?issued|optional.{0,50}not included|not part of this (?:sale|transaction))/i.test(text);
-  const fields: FieldCheck[] = [
-    { label: 'Named insurer', present: positivePatterns.insurer.test(text), reason: 'Identifies who is legally providing coverage.' },
-    { label: 'Policy / certificate number', present: positivePatterns.policy.test(text), reason: 'Makes the benefit traceable and claimable.' },
-    { label: 'Coverage dates', present: positivePatterns.dates.test(text), reason: 'Confirms when protection begins and ends.' },
-    { label: 'Exclusions / deductible', present: positivePatterns.exclusions.test(text), reason: 'Reveals conditions that can defeat the benefit.' },
-    { label: 'Claims contact or process', present: positivePatterns.claims.test(text), reason: 'Explains how the user can actually claim.' },
-  ];
-  const missing = fields.filter((field) => !field.present).length;
-  const riskScore = Math.min(96, 18 + missing * 11 + (contradictionDetected ? 30 : 0) + (!promiseDetected && /insurance|protection/i.test(text) ? 8 : 0));
-  const questions = [
-    !fields[0].present && 'Who is the regulated insurer underwriting this benefit?',
-    !fields[1].present && 'What is the policy or certificate number before I pay?',
-    !fields[2].present && 'What are the exact coverage start and end dates?',
-    !fields[3].present && 'Show me the exclusions, deductible and claim limits in writing.',
-    contradictionDetected && 'Why does the final document say the advertised benefit is optional or not included?',
-  ].filter(Boolean) as string[];
-  return { fileName, pageCount, text, excerpt: makeExcerpt(text), promiseDetected, contradictionDetected, riskScore, fields, questions };
+function parsePromises(text: string, source = 'User-confirmed offer'): PromiseItem[] {
+  const value = normalize(text); const found: PromiseItem[] = [];
+  const add = (category: PromiseCategory, label: string) => found.push({ id: id(), category, label, source, confirmed: true });
+  const insurance = value.match(/(?:free|complimentary|included)?\s*(?:theft|device|accidental)?\s*(?:insurance|protection)/i);
+  const warranty = value.match(/(?:one|two|three|\d+)[-\s]?(?:year|month)s?[^,.]{0,35}warranty|warranty[^,.]{0,35}(?:one|two|three|\d+)[-\s]?(?:year|month)s?/i);
+  const emi = value.match(/(?:no[-\s]?cost|zero[-\s]?cost|interest[-\s]?free)?\s*emi[^,.]{0,55}/i);
+  const cashback = value.match(/(?:₹|rs\.?\s*)?[\d,]+\s*cashback|cashback[^,.]{0,40}/i);
+  const returns = value.match(/(?:\d+|seven|fourteen|thirty)[-\s]?day[^,.]{0,35}(?:return|replacement)|return[^,.]{0,40}/i);
+  const delivery = value.match(/(?:same[-\s]?day|next[-\s]?day|\d+[-\s]?day)[^,.]{0,25}delivery|delivery[^,.]{0,35}/i);
+  if (insurance) add('Insurance', normalize(insurance[0]));
+  if (warranty) add('Warranty', normalize(warranty[0]));
+  if (emi) add('Finance', normalize(emi[0]));
+  if (cashback) add('Cashback', normalize(cashback[0]));
+  if (returns) add('Return', normalize(returns[0]));
+  if (delivery) add('Delivery', normalize(delivery[0]));
+  if (!found.length && value) add('Other', value.slice(0, 110));
+  return found;
 }
-async function extractPdf(file: File): Promise<{ text: string; pageCount: number }> {
+function riskFor(items: PromiseItem[], text: string) {
+  const issues: { title: string; detail: string; question: string }[] = [];
+  for (const item of items) {
+    if (item.category === 'Insurance') {
+      if (!/(insurer|underwritten by)/i.test(text)) issues.push({ title: 'Insurer is not identified', detail: 'A benefit name alone does not establish who provides cover.', question: 'Who is the regulated insurer underwriting this benefit?' });
+      if (!/policy\s*(?:number|no\.?|id)|certificate\s*(?:number|no\.?|id)/i.test(text)) issues.push({ title: 'No policy or certificate number', detail: 'The promised cover is not yet traceable or claimable.', question: 'Please provide the policy or certificate number before I pay.' });
+      if (!/(coverage|policy)\s*(?:dates?|period|from)/i.test(text)) issues.push({ title: 'Coverage dates are missing', detail: 'The start and end of protection are unknown.', question: 'What are the exact coverage start and end dates?' });
+    }
+    if (item.category === 'Finance' && !/(processing fee|apr|annual percentage|gst|total cost)/i.test(text)) issues.push({ title: 'True EMI cost is undisclosed', detail: 'Processing fees and tax can make “no-cost” financing more expensive.', question: 'What are the processing fee, GST, APR and total payable amount?' });
+    if (item.category === 'Cashback' && !/(eligible|card|bank|credited|within)/i.test(text)) issues.push({ title: 'Cashback conditions are unclear', detail: 'Eligibility and credit timing are not stated.', question: 'Which cards qualify, and when will the cashback be credited?' });
+    if (item.category === 'Return' && !/(defect|unused|sealed|condition|eligible)/i.test(text)) issues.push({ title: 'Return eligibility is ambiguous', detail: 'A return period can still contain restrictive conditions.', question: 'Is the return unconditional, and what conditions or deductions apply?' });
+  }
+  return { score: Math.min(96, Math.max(12, 18 + issues.length * 11 + (text.toLowerCase().includes('free') ? 5 : 0))), issues };
+}
+function reconcile(items: PromiseItem[], proofText: string): Finding[] {
+  return items.map((promise) => {
+    if (promise.category === 'Insurance') {
+      if (/(not included|no policy (?:was )?issued|optional.{0,45}not included)/i.test(proofText)) return { promise, verdict: 'CONTRADICTED', detail: 'The final document says protection was not included and no policy was issued.', excerpt: excerptAround(proofText, ['not included', 'no policy']), confidence: 97 };
+      if (/(policy\s*(?:number|no\.?|id)|certificate\s*(?:number|no\.?|id))/i.test(proofText)) return { promise, verdict: 'VERIFIED', detail: 'A traceable insurance identifier was found.', excerpt: excerptAround(proofText, ['policy', 'certificate']), confidence: 91 };
+      return { promise, verdict: 'MISSING', detail: 'No claimable policy evidence was found.', excerpt: excerptAround(proofText, ['insurance', 'protection']), confidence: 72 };
+    }
+    if (promise.category === 'Finance') {
+      if (/(processing fee|convenience fee|gst)/i.test(proofText)) return { promise, verdict: 'CONTRADICTED', detail: 'Additional financing charges were found despite the no-cost promise.', excerpt: excerptAround(proofText, ['processing fee', 'gst']), confidence: 96 };
+      return { promise, verdict: 'UNVERIFIED', detail: 'Upload the invoice and Key Fact Statement to verify total financing cost.', excerpt: 'No financing evidence linked.', confidence: 0 };
+    }
+    if (promise.category === 'Warranty') {
+      return /(24\s*months?|two[-\s]?year)/i.test(proofText)
+        ? { promise, verdict: 'VERIFIED', detail: 'Twenty-four months of manufacturer coverage is documented.', excerpt: excerptAround(proofText, ['24 month', 'manufacturer warranty']), confidence: 95 }
+        : { promise, verdict: 'UNVERIFIED', detail: 'No matching warranty duration was found.', excerpt: excerptAround(proofText, ['warranty']), confidence: 45 };
+    }
+    if (promise.category === 'Cashback') {
+      if (/subject to|eligible bank|eligible card/i.test(proofText)) return { promise, verdict: 'CONTRADICTED', detail: 'The benefit has eligibility conditions absent from the original promise.', excerpt: excerptAround(proofText, ['subject to', 'eligible']), confidence: 88 };
+      return { promise, verdict: 'UNVERIFIED', detail: 'No bank or credit evidence has been linked.', excerpt: 'No cashback evidence linked.', confidence: 0 };
+    }
+    if (promise.category === 'Return') {
+      if (/manufacturing defects? only|replacement only|non[-\s]?returnable/i.test(proofText)) return { promise, verdict: 'CONTRADICTED', detail: 'The final terms restrict the advertised return window.', excerpt: excerptAround(proofText, ['manufacturing defect', 'return']), confidence: 93 };
+      if (/\d+[-\s]?day.{0,35}return/i.test(proofText)) return { promise, verdict: 'VERIFIED', detail: 'A matching return window was found.', excerpt: excerptAround(proofText, ['return']), confidence: 86 };
+    }
+    return { promise, verdict: 'UNVERIFIED', detail: 'No matching final evidence has been linked yet.', excerpt: 'No linked evidence.', confidence: 0 };
+  });
+}
+async function extractPdf(file: File) {
   const pdfjs = await import('pdfjs-dist/legacy/build/pdf.mjs');
   pdfjs.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
   const document = await pdfjs.getDocument({ data: new Uint8Array(await file.arrayBuffer()), isEvalSupported: false }).promise;
@@ -66,171 +95,89 @@ async function extractPdf(file: File): Promise<{ text: string; pageCount: number
     const page = await document.getPage(pageNumber); const content = await page.getTextContent();
     pages.push(content.items.map((item) => ('str' in item ? item.str : '')).join(' '));
   }
-  return { text: pages.join('\n'), pageCount: document.numPages };
-}
-function buildDemoOffer(): PdfAnalysis {
-  return analyzePdfText('festival_offer_demo.pdf', 1, 'Festival offer: Free theft insurance included with this device purchase. No-cost EMI for 12 months. Two-year manufacturer warranty. Ask the store for complete terms at checkout.');
+  return { text: pages.join('\n'), pages: document.numPages };
 }
 
 export default function Home() {
-  const [stage, setStage] = useState<Stage>('home');
-  const [mode, setMode] = useState<Mode>('post');
-  const [evidence, setEvidence] = useState<EvidenceKind[]>([]);
-  const [offerAnalysis, setOfferAnalysis] = useState<PdfAnalysis | null>(null);
-  const [finalAnalysis, setFinalAnalysis] = useState<PdfAnalysis | null>(null);
+  const [view, setView] = useState<View>('home');
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
+  const [offerText, setOfferText] = useState('');
+  const [proofText, setProofText] = useState('');
+  const [promises, setPromises] = useState<PromiseItem[]>([]);
+  const [sources, setSources] = useState<SourceItem[]>([]);
+  const [proofName, setProofName] = useState('');
   const [processing, setProcessing] = useState('');
   const [toast, setToast] = useState('');
   const [sourceOpen, setSourceOpen] = useState('');
-  const imageInput = useRef<HTMLInputElement>(null); const audioInput = useRef<HTMLInputElement>(null); const pdfInput = useRef<HTMLInputElement>(null); const finalPdfInput = useRef<HTMLInputElement>(null);
-  const fileInputs = { image: imageInput, audio: audioInput, pdf: pdfInput };
-  const activeStep = stageIndex[stage];
-  const reviewedClaims = useMemo(() => {
-    if (!finalAnalysis) return demoClaims;
-    const insuranceVerdict: Verdict = finalAnalysis.contradictionDetected ? 'MISSING' : finalAnalysis.fields.filter((field) => field.present).length >= 3 ? 'KEPT' : 'UNVERIFIED';
-    return [
-      { ...demoClaims[1], verdict: insuranceVerdict, finalEvidence: finalAnalysis.fileName, confidence: finalAnalysis.contradictionDetected ? 97 : 78, detail: finalAnalysis.contradictionDetected ? 'Document states that protection is optional or not included' : 'Policy essentials are incomplete', sourceExcerpt: finalAnalysis.excerpt },
-      { ...demoClaims[0], verdict: 'UNVERIFIED' as Verdict, detail: 'Upload the invoice and Key Fact Statement to verify financing cost', confidence: 0 },
-      { ...demoClaims[2], verdict: 'UNVERIFIED' as Verdict, detail: 'Upload the warranty card to verify coverage duration', confidence: 0 },
-    ];
-  }, [finalAnalysis]);
-  const riskCount = reviewedClaims.filter((claim) => claim.verdict === 'MISSING' || claim.verdict === 'CHANGED').length;
-  const fieldChecks = offerAnalysis?.fields ?? [];
-  const preRiskLabel = (offerAnalysis?.riskScore ?? 0) >= 70 ? 'HIGH RISK' : (offerAnalysis?.riskScore ?? 0) >= 40 ? 'REVIEW' : 'LOW RISK';
+  const [speechActive, setSpeechActive] = useState(false);
+  const [returnDate, setReturnDate] = useState('2026-09-14');
+  const [warrantyDate, setWarrantyDate] = useState('2028-09-07');
+  const [savedCases, setSavedCases] = useState<SavedCase[]>([]);
+  const imageInput = useRef<HTMLInputElement>(null); const offerPdfInput = useRef<HTMLInputElement>(null); const proofPdfInput = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      try { setSavedCases(JSON.parse(localStorage.getItem('buysure-cases') || '[]')); }
+      catch { setSavedCases([]); }
+    }, 0);
+    return () => window.clearTimeout(timer);
+  }, []);
+  const risk = useMemo(() => riskFor(promises, offerText), [promises, offerText]);
+  const findings = useMemo(() => reconcile(promises, proofText), [promises, proofText]);
+  const issueCount = findings.filter((item) => item.verdict === 'CONTRADICTED' || item.verdict === 'MISSING').length;
+  const verifiedCount = findings.filter((item) => item.verdict === 'VERIFIED').length;
+  const confidence = promises.length ? Math.max(18, Math.round((verifiedCount / promises.length) * 100 - issueCount * 4)) : 0;
+  const activeStep = ({ capture: 1, ledger: 2, risk: 3, proof: 4, results: 5, claim: 6 } as Partial<Record<View, number>>)[view] || 0;
 
   function flash(message: string) { setToast(message); window.setTimeout(() => setToast(''), 2400); }
-  function selectMode(nextMode: Mode) { setMode(nextMode); setOfferAnalysis(null); setFinalAnalysis(null); setEvidence([]); setStage('capture'); }
-  function simulateEvidence(kind: Exclude<EvidenceKind, 'pdf'>) {
-    setProcessing(`Preparing the ${kind === 'image' ? 'camera OCR' : 'consented audio'} adapter…`);
-    window.setTimeout(() => { setEvidence((current) => current.includes(kind) ? current : [...current, kind]); setProcessing(''); flash('Sample evidence added for prototype testing'); }, 650);
+  function restart() { setView('home'); setOfferText(''); setProofText(''); setPromises([]); setSources([]); setProofName(''); setSourceOpen(''); }
+  function addSource(kind: SourceItem['kind'], name: string, status: string) { setSources((current) => [...current.filter((item) => item.kind !== kind), { id: id(), kind, name, status }]); }
+  function extractLedger() { const parsed = parsePromises(offerText, sources.at(-1)?.name || 'Typed promise'); setPromises(parsed); setView('ledger'); flash(`${parsed.length} promise${parsed.length === 1 ? '' : 's'} structured for confirmation`); }
+  function loadDemo() { setOfferText(demoOffer); setSources([{ id: id(), kind: 'image', name: 'Store offer screenshot', status: 'Captured' }, { id: id(), kind: 'voice', name: 'Seller promise transcript', status: 'User confirmed' }]); setPromises(parsePromises(demoOffer, 'Store offer + seller statement')); setView('ledger'); }
+  async function handleOfferPdf(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]; if (!file) return; setProcessing('Extracting seller promises from the PDF locally…');
+    try { const result = await extractPdf(file); setOfferText(result.text); addSource('pdf', file.name, `${result.pages} page${result.pages === 1 ? '' : 's'} parsed locally`); flash('Offer PDF parsed locally'); }
+    catch { flash('This PDF could not be read. Try a text-based PDF.'); } finally { setProcessing(''); event.target.value = ''; }
   }
-  async function handleOfferFile(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0]; if (!file) return;
-    if (file.type !== 'application/pdf' && !file.name.toLowerCase().endsWith('.pdf')) { flash('Please choose a PDF for real local extraction'); return; }
-    setProcessing('Reading PDF pages locally and extracting policy terms…');
-    try {
-      const extracted = await extractPdf(file); const analysis = analyzePdfText(file.name, extracted.pageCount, extracted.text);
-      setOfferAnalysis(analysis); setEvidence((current) => current.includes('pdf') ? current : [...current, 'pdf']); flash(`${extracted.pageCount} page${extracted.pageCount === 1 ? '' : 's'} parsed on device`);
-    } catch { flash('This PDF could not be read. Try a text-based PDF or use the demo.'); }
-    finally { setProcessing(''); event.target.value = ''; }
+  function handleImage(event: ChangeEvent<HTMLInputElement>) { const file = event.target.files?.[0]; if (!file) return; addSource('image', file.name, 'Visual evidence secured'); flash('Image captured—describe or paste the visible promise to confirm it'); event.target.value = ''; }
+  function startVoice() {
+    type SpeechEngine = { lang: string; interimResults: boolean; onresult: (event: { results: { 0: { 0: { transcript: string } } }[] }) => void; onend: () => void; onerror: () => void; start: () => void };
+    const browserWindow = window as typeof window & { SpeechRecognition?: new () => SpeechEngine; webkitSpeechRecognition?: new () => SpeechEngine };
+    const SpeechRecognition = browserWindow.SpeechRecognition || browserWindow.webkitSpeechRecognition;
+    if (!SpeechRecognition) { flash('Voice recognition is unavailable here—type the promise instead'); return; }
+    const recognition = new SpeechRecognition(); recognition.lang = language === 'hi' ? 'hi-IN' : 'en-IN'; recognition.interimResults = false; setSpeechActive(true);
+    recognition.onresult = (event) => { const transcript = event.results[0][0].transcript; setOfferText((current) => normalize(`${current} ${transcript}`)); addSource('voice', 'Consented seller statement', 'Transcribed and awaiting confirmation'); };
+    recognition.onend = () => setSpeechActive(false); recognition.onerror = () => { setSpeechActive(false); flash('Voice capture stopped—type the promise instead'); }; recognition.start();
   }
-  async function handleFinalFile(event: ChangeEvent<HTMLInputElement>) {
-    const file = event.target.files?.[0]; if (!file) return; setProcessing('Extracting final policy evidence and checking contradictions…');
-    try { const extracted = await extractPdf(file); setFinalAnalysis(analyzePdfText(file.name, extracted.pageCount, extracted.text)); flash('Final evidence parsed and source-linked'); }
-    catch { flash('Could not parse this PDF. Use the provided demo evidence.'); }
-    finally { setProcessing(''); event.target.value = ''; }
+  async function handleProofPdf(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0]; if (!file) return; setProcessing('Parsing final documents and reconciling every promise…');
+    try { const result = await extractPdf(file); setProofText(result.text); setProofName(file.name); flash(`${result.pages} page${result.pages === 1 ? '' : 's'} linked as final evidence`); }
+    catch { flash('Could not read this PDF. Try a text-based document.'); } finally { setProcessing(''); event.target.value = ''; }
   }
-  function loadDemoOffer() {
-    setProcessing('Normalizing the sample seller promise into a claim graph…');
-    window.setTimeout(() => { setOfferAnalysis(buildDemoOffer()); setEvidence(['image', 'audio', 'pdf']); setProcessing(''); setStage('review'); }, 760);
+  function loadDemoProof() { setProofText(demoProof); setProofName('buysure_demo_final_documents.pdf'); flash('Demo invoice, policy and warranty evidence linked'); }
+  function saveCase() {
+    const item: SavedCase = { id: id(), title: 'Electronics purchase check', createdAt: new Date().toLocaleDateString('en-IN'), score: confidence, issues: issueCount, promises: promises.length };
+    const next = [item, ...savedCases].slice(0, 8); setSavedCases(next); localStorage.setItem('buysure-cases', JSON.stringify(next)); flash('Case saved to this device');
   }
-  function loadDemoFinal() {
-    setFinalAnalysis(analyzePdfText('dealtwin_demo_insurance_addendum.pdf', 1, 'Insurance Addendum. Optional theft protection is not included in this transaction. No policy was issued. No insurer, policy number, coverage dates or claims process is provided.'));
-    flash('Demo insurance addendum loaded');
+  function downloadPack() {
+    const lines = ['BUYSURE CLAIM-READY EVIDENCE PACK', `Generated: ${new Date().toLocaleString('en-IN')}`, '', 'PURCHASE PROMISES', ...promises.map((item) => `- ${item.category}: ${item.label} | Source: ${item.source}`), '', 'DOCUMENT FINDINGS', ...findings.map((item) => `- ${item.verdict}: ${item.promise.label}\n  ${item.detail}\n  Evidence: ${item.excerpt}`), '', `Return / cancellation deadline: ${returnDate}`, `Warranty end date: ${warrantyDate}`, '', 'This report is decision support and not legal or financial advice.'];
+    const url = URL.createObjectURL(new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' })); const anchor = document.createElement('a'); anchor.href = url; anchor.download = 'BuySure-evidence-pack.txt'; anchor.click(); URL.revokeObjectURL(url); flash('Evidence pack downloaded');
   }
-  function runVerification() { setProcessing('Reconciling promise nodes with source-bound evidence…'); window.setTimeout(() => { setProcessing(''); setStage('result'); }, 900); }
-  function resetDemo() { setEvidence([]); setOfferAnalysis(null); setFinalAnalysis(null); setProcessing(''); setSourceOpen(''); setStage('home'); }
 
-  return (
-    <main className="app-shell">
-      <header className="topbar">
-        <button className="brand" onClick={resetDemo} aria-label="DealTwin home"><span className="brand-mark">D</span><span><strong>DealTwin</strong><small>Promise-to-proof verification</small></span></button>
-        <div className="privacy-pill"><span className="live-dot" /> Local-first • No web search</div>
-      </header>
-      <div className="workspace">
-        <section className="phone-stage" aria-live="polite">
-          <div className="phone-topline"><span>09:41</span><span>5G ▮▮▮ 88%</span></div>
-          {stage !== 'home' && <div className="stepper" aria-label={`Step ${activeStep} of 4`}>{[1, 2, 3, 4].map((step) => <span key={step} className={step <= activeStep ? 'active' : ''} />)}</div>}
-          {stage === 'home' && (
-            <section className="screen home-screen">
-              <div className="home-header"><div><p className="eyebrow">TEAM ANKOR • IQOO HACKATHON</p><h1>Don’t trust the deal.<br />Verify it.</h1></div><div className="shield">✓</div></div>
-              <p className="home-copy">A private, phone-first evidence ledger for promises made before purchase—and documents delivered after it.</p>
-              <div className="mode-grid">
-                <button className="mode-card pre" onClick={() => selectMode('pre')}><span className="mode-index">01</span><span><b>BEFORE PURCHASE</b><strong>Check an offer</strong><small>Expose missing policy terms and risky promises before you pay.</small></span><i>→</i></button>
-                <button className="mode-card post" onClick={() => selectMode('post')}><span className="mode-index">02</span><span><b>AFTER PURCHASE</b><strong>Verify what arrived</strong><small>Compare invoices, KFS, warranty and insurance with the promise.</small></span><i>→</i></button>
-              </div>
-              <div className="section-heading"><span>Recent verification</span><small>FULL DEMO CASE</small></div>
-              <button className="deal-card" onClick={() => { setMode('post'); setOfferAnalysis(buildDemoOffer()); setEvidence(['image', 'audio', 'pdf']); setFinalAnalysis(null); setStage('result'); }}>
-                <div className="deal-top"><span className="product-icon">▰</span><span><strong>ZenBook 14 purchase</strong><small>Reliance Digital • Today</small></span><span className="risk-badge">2 issues</span></div>
-                <div className="deal-metrics"><span><b>11</b><small>claims</small></span><span><b>3</b><small>sources</small></span><span><b>₹4,748</b><small>impact</small></span></div><div className="deal-status"><span style={{ width: '66%' }} />1 kept · 1 changed · 1 missing</div>
-              </button>
-              <div className="trust-row"><span>◈ User documents only</span><span>◉ Consent-aware audio</span><span>◎ Source-linked verdicts</span></div>
-            </section>
-          )}
-          {stage === 'capture' && (
-            <section className="screen">
-              <button className="back" onClick={() => setStage('home')}>← Choose mode</button><p className="eyebrow">STEP 1 • {mode === 'pre' ? 'OFFER CHECK' : 'PROMISE EVIDENCE'}</p>
-              <h2>{mode === 'pre' ? 'Upload the offer before you pay.' : 'What exactly did the seller promise?'}</h2>
-              <p className="intro">{mode === 'pre' ? 'DealTwin reads the offer locally, checks whether policy essentials are missing, and produces questions to ask the seller.' : 'Build a source-bound promise ledger. PDF extraction is live; camera and consented audio use prototype adapters.'}</p>
-              <div className="capture-list">{(Object.keys(evidenceLabels) as EvidenceKind[]).map((kind) => {
-                const item = evidenceLabels[kind]; const isAdded = evidence.includes(kind);
-                return <button key={kind} className={`capture-card ${isAdded ? 'complete' : ''}`} onClick={() => fileInputs[kind].current?.click()}><span className="capture-glyph">{isAdded ? '✓' : item.glyph}</span><span><strong>{item.title}</strong><small>{isAdded ? (kind === 'pdf' && offerAnalysis ? `${offerAnalysis.pageCount} page PDF parsed locally` : 'Prototype evidence adapter ready') : item.subtitle}</small></span><b>{isAdded ? 'SECURED' : 'ADD'}</b><input ref={fileInputs[kind]} type="file" hidden accept={kind === 'image' ? 'image/*' : kind === 'audio' ? 'audio/*' : '.pdf,application/pdf'} capture={kind === 'image' ? 'environment' : undefined} onChange={(event) => kind === 'pdf' ? handleOfferFile(event) : simulateEvidence(kind)} /></button>;
-              })}</div>
-              <div className="consent-note"><span>i</span><p><strong>Privacy boundary</strong><br />Only files you choose are analyzed. DealTwin never searches the internet automatically.</p></div>
-              <button className="main-button" onClick={loadDemoOffer}>Load judge-ready sample <span>→</span></button><button className="text-button" disabled={!offerAnalysis} onClick={() => setStage('review')}>Review extracted offer</button>
-            </section>
-          )}
-          {stage === 'review' && (
-            <section className="screen">
-              <button className="back" onClick={() => setStage('capture')}>← Back</button><p className="eyebrow">STEP 2 • {mode === 'pre' ? 'RISK ANALYSIS' : 'CLAIM GRAPH'}</p>
-              <h2>{mode === 'pre' ? 'The promise is clear. The protection is not.' : 'Review the extracted promises.'}</h2>
-              <p className="intro">{mode === 'pre' ? 'A benefit name is not a usable policy. DealTwin checks the minimum evidence needed to make it enforceable.' : 'AI structures evidence into claims; the user confirms the ledger before comparison.'}</p>
-              {mode === 'pre' ? <>
-                <div className="risk-summary"><div><span>PRE-PURCHASE RISK</span><strong>{preRiskLabel}</strong><small>{offerAnalysis?.riskScore ?? 0}/100 risk score</small></div><b>{fieldChecks.filter((field) => !field.present).length}<small>missing essentials</small></b></div>
-                <div className="field-list">{fieldChecks.map((field) => <div key={field.label} className={field.present ? 'present' : 'absent'}><span>{field.present ? '✓' : '!'}</span><p><strong>{field.label}</strong><small>{field.reason}</small></p><b>{field.present ? 'FOUND' : 'MISSING'}</b></div>)}</div>
-                <details className="source-snippet"><summary>View extracted source text</summary><p>“{offerAnalysis?.excerpt}”</p></details>
-                <div className="official-check"><span>OFF</span><p><strong>Official Source Check</strong><br />Future user-requested checks on trusted official domains only—never automatic.</p></div>
-                <button className="main-button" onClick={() => setStage('result')}>Open buyer risk report <span>→</span></button>
-              </> : <>
-                <div className="summary-strip"><span><strong>3</strong> claims shown</span><span><strong>96%</strong> demo confidence</span></div>
-                <div className="claim-list">{demoClaims.map((claim, index) => <article className="claim-card" key={claim.promise}><div className="claim-number">0{index + 1}</div><div><p>{claim.promise}</p><code>{claim.normalized}</code><small>Source {index === 0 ? 'Ad screenshot' : index === 1 ? 'Consented audio' : 'Seller chat'} · user-confirmed</small></div><button aria-label={`Edit ${claim.promise}`}>•••</button></article>)}</div>
-                <div className="source-proof"><span>◎</span><p><strong>Source-bound by design</strong><br />Each normalized claim retains its original evidence and timestamp.</p></div><button className="main-button" onClick={() => setStage('documents')}>Confirm promise ledger <span>→</span></button>
-              </>}
-            </section>
-          )}
-          {stage === 'documents' && (
-            <section className="screen">
-              <button className="back" onClick={() => setStage('review')}>← Promise ledger</button><p className="eyebrow">STEP 3 • FINAL EVIDENCE</p><h2>Add what you actually received.</h2>
-              <p className="intro">Upload the final insurance or policy PDF. This prototype performs real local text extraction and links each verdict back to the document.</p>
-              <button className={`document-drop ${finalAnalysis ? 'ready' : ''}`} onClick={() => finalPdfInput.current?.click()}><span>{finalAnalysis ? '✓' : '⇧'}</span><strong>{finalAnalysis ? finalAnalysis.fileName : 'Import final insurance PDF'}</strong><small>{finalAnalysis ? `${finalAnalysis.pageCount} page${finalAnalysis.pageCount === 1 ? '' : 's'} parsed locally` : 'Policy • certificate • insurance addendum'}</small><input ref={finalPdfInput} type="file" hidden accept=".pdf,application/pdf" onChange={handleFinalFile} /></button>
-              {finalAnalysis && <div className="doc-list"><div><span>✓</span><p><strong>Insurance evidence</strong><small>{finalAnalysis.contradictionDetected ? 'Explicit contradiction detected' : 'Policy terms extracted'}</small></p><b>LINKED</b></div></div>}
-              <div className="demo-evidence-row"><a href="/demo/dealtwin_demo_insurance_addendum.pdf" download>↓ Download demo PDF</a><button onClick={loadDemoFinal}>Use without downloading</button></div>
-              <div className="engine-card"><span className="engine-orbit">D</span><p><strong>Hybrid verification engine</strong><br />PDF.js extracts text locally; deterministic rules identify missing fields and contradictions.</p></div>
-              <button className="main-button" disabled={!finalAnalysis} onClick={runVerification}>Compare promise vs proof <span>→</span></button>
-            </section>
-          )}
-          {stage === 'result' && mode === 'pre' && (
-            <section className="screen result-screen">
-              <div className="result-header"><button className="back" onClick={() => setStage('review')}>← Analysis</button><span className="verified-chip warning-chip">PRE-PURCHASE REPORT</span></div>
-              <p className="eyebrow">STEP 3 • DECISION SUPPORT</p><h2>Do not pay until the missing terms are written down.</h2><p className="intro">The offer mentions protection, but does not contain enough evidence for a dependable insurance benefit.</p>
-              <div className="score-card risk"><div className="score-ring"><strong>{offerAnalysis?.riskScore ?? 0}</strong><small>/100</small></div><div><span>OFFER RISK</span><strong>{preRiskLabel}</strong><small>{fieldChecks.filter((field) => !field.present).length} policy essentials missing · source linked</small></div></div>
-              <div className="question-block"><span>ASK BEFORE PAYING</span>{(offerAnalysis?.questions ?? []).slice(0, 4).map((question, index) => <div key={question}><b>0{index + 1}</b><p>{question}</p></div>)}</div>
-              <details className="source-snippet" open><summary>Why this warning?</summary><p>DealTwin found the promise in “{offerAnalysis?.fileName}”, but could not validate the minimum policy fields. This is decision support—not legal or financial advice.</p></details>
-              <button className="main-button" onClick={() => flash('Buyer checklist copied')}>Copy seller questions <span>→</span></button>
-            </section>
-          )}
-          {stage === 'result' && mode === 'post' && (
-            <section className="screen result-screen">
-              <div className="result-header"><button className="back" onClick={() => setStage('documents')}>← Evidence</button><span className="verified-chip">VERIFICATION COMPLETE</span></div><p className="eyebrow">STEP 4 • DEAL LEDGER</p>
-              <h2>{finalAnalysis ? <>The promised insurance <em>was not delivered.</em></> : <>Your “no-cost” deal costs <em>₹4,748 more.</em></>}</h2><p className="intro">{finalAnalysis ? 'One evidence-backed contradiction needs attention. Other promises remain unverified until their documents are uploaded.' : 'Two of three important promises need attention before the return window closes.'}</p>
-              <div className="score-card"><div className="score-ring"><strong>{finalAnalysis ? 42 : 64}</strong><small>/100</small></div><div><span>DEAL CONFIDENCE</span><strong>Review before accepting</strong><small>{riskCount} inconsistency found · {finalAnalysis ? '1 real PDF linked' : '3 demo sources linked'}</small></div></div>
-              <div className="verdict-list">{reviewedClaims.map((claim) => <details className={`verdict ${claim.verdict.toLowerCase()}`} key={claim.promise} open={claim.verdict !== 'KEPT' && claim.verdict !== 'UNVERIFIED'}><summary><span className="verdict-icon">{claim.verdict === 'KEPT' ? '✓' : claim.verdict === 'CHANGED' ? '!' : claim.verdict === 'MISSING' ? '–' : '?'}</span><span><strong>{claim.promise}</strong><small>{claim.detail}</small></span><b>{claim.verdict}</b></summary>{claim.verdict !== 'UNVERIFIED' && <div className="evidence-link"><span>↳</span> Compared with {claim.finalEvidence} · {claim.confidence}% confidence <button onClick={() => setSourceOpen(claim.sourceExcerpt ?? claim.detail)}>View source</button></div>}</details>)}</div>
-              <div className="action-card"><div><span>ACTION WINDOW</span><strong>Raise before return / cancellation closes</strong></div><button onClick={() => flash('Evidence pack generated')}>Evidence pack</button></div><button className="main-button" onClick={() => flash('Seller-ready summary copied')}>Prepare seller conversation <span>→</span></button>
-            </section>
-          )}
-          {processing && <div className="processing-overlay"><span className="loader" /><strong>{processing}</strong><small>Private processing • files stay in this browser session</small></div>}
-          {sourceOpen && <div className="source-modal" role="dialog" aria-modal="true"><div><span>SOURCE EVIDENCE</span><button onClick={() => setSourceOpen('')}>×</button><h3>Exact extracted excerpt</h3><blockquote>“{sourceOpen}”</blockquote><small>Linked to the uploaded PDF • locally extracted</small></div></div>}
-          {toast && <div className="toast">✓ {toast}</div>}
-          <nav className="bottom-nav" aria-label="Primary navigation"><button className={stage === 'home' ? 'active' : ''} onClick={() => setStage('home')}><span>⌂</span>Home</button><button className={stage !== 'home' ? 'active' : ''} onClick={() => selectMode('post')}><span>＋</span>Verify</button><button onClick={() => flash('Evidence vault is session-private in this prototype')}><span>▤</span>Vault</button></nav>
-        </section>
-        <aside className="demo-panel">
-          <p className="eyebrow">INITIAL-ROUND PROTOTYPE</p><h2>One problem.<br />Two intervention points.</h2>
-          <div className="mode-legend"><span className={mode === 'pre' ? 'active' : ''}>BEFORE PURCHASE</span><i>Promise risk</i><b>→</b><span className={mode === 'post' ? 'active' : ''}>AFTER PURCHASE</span><i>Proof mismatch</i></div>
-          <ol><li className={activeStep === 0 ? 'active' : ''}><span>01</span><div><strong>Choose the intervention</strong><small>Prevent a risky purchase or verify a completed one.</small></div></li><li className={activeStep === 1 || activeStep === 2 ? 'active' : ''}><span>02</span><div><strong>Create a promise graph</strong><small>Every claim retains source, timestamp and normalized meaning.</small></div></li><li className={activeStep === 3 ? 'active' : ''}><span>03</span><div><strong>Parse final policy evidence</strong><small>Real client-side PDF extraction; no automatic web search.</small></div></li><li className={activeStep === 4 ? 'active' : ''}><span>04</span><div><strong>Generate an actionable verdict</strong><small>Missing terms, contradictions and next questions.</small></div></li></ol>
-          <div className="architecture-card"><span>LOCAL-FIRST VERIFICATION PIPELINE</span><div><b>Capture</b><i>→</i><b>Extract</b><i>→</i><b>Normalize</b><i>→</i><b>Reconcile</b></div><small>PDF.js text layer → policy-field rules → promise/proof graph → source-linked explanation</small></div>
-          <div className="technical-proof"><span><b>LIVE NOW</b> Local PDF parsing + deterministic checks</span><span><b>NEXT</b> On-device OCR / ASR and open-model claim extraction</span><span><b>OPTIONAL</b> User-triggered official-source verification</span></div>
-          <button className="demo-reset" onClick={resetDemo}>↻ Restart demo</button><p className="prototype-note">The sample path is deterministic for reliable judging. Uploaded text PDFs are parsed and analyzed for real in the browser.</p>
-        </aside>
-      </div>
-    </main>
-  );
+  return <Translate language={language}><main className="buy-app">
+    <header className="topbar"><button className="brand" onClick={restart}><span className="brand-mark">B</span><span><strong>BuySure</strong><small>Know what you buy. Prove what was promised.</small></span></button><div className="header-actions"><button onClick={() => setLanguage(language === 'en' ? 'hi' : 'en')}>{language === 'en' ? 'हिंदी' : 'EN'}</button><span className="privacy-pill">● Private by default</span></div></header>
+    <div className="workspace"><section className="phone-shell" aria-live="polite"><div className="statusbar"><span>09:41</span><span>5G ▮▮▮ 88%</span></div>{activeStep > 0 && <div className="progress">{[1,2,3,4,5,6].map((step) => <span key={step} className={step <= activeStep ? 'on' : ''} />)}</div>}
+      {view === 'home' && <section className="screen home-view"><div className="hero-row"><div><p className="eyebrow">PURCHASE TRUST LAYER</p><h1>{copy[language].home}</h1><p>Capture what a seller promised, verify what the documents prove, and stay ready to claim.</p></div><div className="trust-orb"><span>✓</span><small>LOCAL<br />FIRST</small></div></div><button className="start-card" onClick={() => setView('capture')}><span className="start-icon">＋</span><span><b>NEW CHECK</b><strong>{copy[language].start}</strong><small>Before purchase or after purchase</small></span><i>→</i></button><div className="journey"><span><b>01</b>Capture</span><i>→</i><span><b>02</b>Assess</span><i>→</i><span><b>03</b>Verify</span><i>→</i><span><b>04</b>Act</span></div><div className="section-title"><strong>Try the complete flow</strong><small>DETERMINISTIC DEMO</small></div><button className="demo-case" onClick={loadDemo}><div className="demo-case-top"><span className="bag">▣</span><span><strong>Electronics purchase</strong><small>Insurance · EMI · warranty · cashback · returns</small></span><b>5 promises</b></div><div className="demo-case-score"><span style={{ width: '78%' }} /><small>Seller promise captured — final proof pending</small></div></button><div className="privacy-grid"><span>◈ User-selected files</span><span>◎ Source-linked findings</span><span>⌁ Stored on this device</span></div></section>}
+      {view === 'capture' && <section className="screen"><button className="back" onClick={() => setView('home')}>← Home</button><p className="eyebrow">STEP 1 · CAPTURE THE PROMISE</p><h2>What did the seller offer?</h2><p className="intro">Add evidence, then confirm the promise in your own words. BuySure never treats an unconfirmed recording as fact.</p><div className="capture-grid"><button onClick={() => imageInput.current?.click()}><span>▣</span><strong>Camera / screenshot</strong><small>Capture visual evidence</small></button><button onClick={startVoice} className={speechActive ? 'listening' : ''}><span>◉</span><strong>{speechActive ? 'Listening…' : 'Voice promise'}</strong><small>With consent</small></button><button onClick={() => offerPdfInput.current?.click()}><span>⇧</span><strong>Offer PDF</strong><small>Real local extraction</small></button></div><input ref={imageInput} hidden type="file" accept="image/*" capture="environment" onChange={handleImage} /><input ref={offerPdfInput} hidden type="file" accept=".pdf,application/pdf" onChange={handleOfferPdf} />{sources.length > 0 && <div className="sources">{sources.map((source) => <div key={source.id}><span>✓</span><p><strong>{source.name}</strong><small>{source.status}</small></p></div>)}</div>}<label className="promise-input"><span>CONFIRMED SELLER PROMISE</span><textarea value={offerText} onChange={(event) => setOfferText(event.target.value)} placeholder="Example: Free theft insurance, no-cost EMI for 12 months and a two-year warranty…" /></label><div className="row-actions"><button onClick={() => { setOfferText(demoOffer); addSource('text', 'Demo seller offer', 'User-editable sample'); }}>Use sample offer</button><small>Nothing is uploaded to the web.</small></div><button className="primary" disabled={!offerText.trim()} onClick={extractLedger}>Create Promise Ledger <span>→</span></button></section>}
+      {view === 'ledger' && <section className="screen"><button className="back" onClick={() => setView('capture')}>← Capture</button><p className="eyebrow">STEP 2 · PROMISE LEDGER</p><h2>Confirm what must be delivered.</h2><p className="intro">Every promise stays connected to its source. Edit anything the extraction misunderstood.</p><div className="ledger-list">{promises.map((item, index) => <article key={item.id}><span className="ledger-number">0{index + 1}</span><div><select value={item.category} onChange={(event) => setPromises((current) => current.map((entry) => entry.id === item.id ? { ...entry, category: event.target.value as PromiseCategory } : entry))}>{categories.map((category) => <option key={category}>{category}</option>)}</select><input value={item.label} onChange={(event) => setPromises((current) => current.map((entry) => entry.id === item.id ? { ...entry, label: event.target.value } : entry))} /><small>◎ {item.source}</small></div><button aria-label="Remove promise" onClick={() => setPromises((current) => current.filter((entry) => entry.id !== item.id))}>×</button></article>)}</div><button className="add-line" onClick={() => setPromises((current) => [...current, { id: id(), category: 'Other', label: 'New seller promise', source: 'Manual entry', confirmed: true }])}>＋ Add another promise</button><div className="info-card"><span>✓</span><p><strong>User confirmation is mandatory</strong><small>BuySure shows what it extracted; you decide what enters the ledger.</small></p></div><button className="primary" disabled={!promises.length} onClick={() => setView('risk')}>Assess purchase risk <span>→</span></button></section>}
+      {view === 'risk' && <section className="screen"><button className="back" onClick={() => setView('ledger')}>← Ledger</button><p className="eyebrow">STEP 3 · BEFORE YOU PAY</p><h2>The offer sounds good. Is it complete?</h2><div className="risk-card"><div className="score-ring"><strong>{risk.score}</strong><small>/100</small></div><div><span>OFFER RISK</span><strong>{risk.score >= 70 ? 'HIGH — ASK FIRST' : risk.score >= 40 ? 'REVIEW REQUIRED' : 'LOW'}</strong><small>{risk.issues.length} disclosure gap{risk.issues.length === 1 ? '' : 's'} found</small></div></div><div className="issue-list">{risk.issues.slice(0,5).map((item, index) => <details key={item.title} open={index < 2}><summary><span>!</span><div><strong>{item.title}</strong><small>{item.detail}</small></div></summary><p><b>ASK:</b> {item.question}</p></details>)}</div><div className="decision-note"><b>BUYER DECISION</b><p>Do not rely on a verbal benefit until its provider, dates, conditions and claim path are written down.</p></div><button className="secondary" onClick={() => navigator.clipboard?.writeText(risk.issues.map((item) => item.question).join('\n')).then(() => flash('Seller questions copied'))}>Copy questions for seller</button><button className="primary" onClick={() => setView('proof')}>I purchased it — verify proof <span>→</span></button></section>}
+      {view === 'proof' && <section className="screen"><button className="back" onClick={() => setView('risk')}>← Risk report</button><p className="eyebrow">STEP 4 · FINAL DOCUMENTS</p><h2>What did you actually receive?</h2><p className="intro">Upload a text-based policy, invoice, KFS or warranty PDF. Extraction runs locally in this browser.</p><button className={`dropzone ${proofText ? 'ready' : ''}`} onClick={() => proofPdfInput.current?.click()}><span>{proofText ? '✓' : '⇧'}</span><strong>{proofName || 'Import final documents'}</strong><small>{proofText ? 'Evidence extracted and ready to compare' : 'PDF · policy · invoice · warranty'}</small></button><input ref={proofPdfInput} hidden type="file" accept=".pdf,application/pdf" onChange={handleProofPdf} /><button className="sample-proof" onClick={loadDemoProof}>Use complete demo evidence</button><div className="deadline-card"><span>DEADLINE WATCH</span><label>Return / cancellation<input type="date" value={returnDate} onChange={(event) => setReturnDate(event.target.value)} /></label><label>Warranty ends<input type="date" value={warrantyDate} onChange={(event) => setWarrantyDate(event.target.value)} /></label></div><button className="primary" disabled={!proofText} onClick={() => { setProcessing('Reconciling promise nodes with clause-level evidence…'); window.setTimeout(() => { setProcessing(''); setView('results'); saveCase(); }, 800); }}>Compare promise vs proof <span>→</span></button></section>}
+      {view === 'results' && <section className="screen"><button className="back" onClick={() => setView('proof')}>← Documents</button><div className="result-kicker"><p className="eyebrow">STEP 5 · EVIDENCE VERDICT</p><span>COMPLETE</span></div><h2>{copy[language].result}</h2><p className="intro">Each verdict is tied to a final-document clause. Unverified means more evidence is needed—not that the promise is false.</p><div className="confidence-card"><div className="score-ring"><strong>{confidence}</strong><small>/100</small></div><div><span>DEAL CONFIDENCE</span><strong>{issueCount ? `${issueCount} issue${issueCount === 1 ? '' : 's'} require action` : 'Evidence looks consistent'}</strong><small>{verifiedCount} verified · {promises.length - verifiedCount - issueCount} unverified</small></div></div><div className="finding-list">{findings.map((finding) => <details key={finding.promise.id} className={finding.verdict.toLowerCase()} open={finding.verdict === 'CONTRADICTED' || finding.verdict === 'MISSING'}><summary><span>{finding.verdict === 'VERIFIED' ? '✓' : finding.verdict === 'UNVERIFIED' ? '?' : '!'}</span><div><strong>{finding.promise.label}</strong><small>{finding.detail}</small></div><b>{finding.verdict}</b></summary><button onClick={() => setSourceOpen(finding.excerpt)}>View exact source clause →</button></details>)}</div><button className="primary" onClick={() => setView('claim')}>{copy[language].protect} <span>→</span></button></section>}
+      {view === 'claim' && <section className="screen"><button className="back" onClick={() => setView('results')}>← Verdicts</button><p className="eyebrow">STEP 6 · CLAIMREADY</p><h2>Turn findings into action.</h2><p className="intro">BuySure packages the promise, supporting evidence, contradiction and key deadlines into one portable record.</p><div className="claim-summary"><span>CLAIM READINESS</span><strong>{issueCount ? 'Evidence pack ready' : 'No dispute detected'}</strong><div><b>{promises.length}</b><small>promises</small><b>{sources.length + 1}</b><small>sources</small><b>{issueCount}</b><small>issues</small></div></div><div className="pack-list"><div><span>01</span><p><strong>Original promise ledger</strong><small>What was offered and where it came from</small></p><b>READY</b></div><div><span>02</span><p><strong>Clause-level findings</strong><small>Contradictions and supporting excerpts</small></p><b>READY</b></div><div><span>03</span><p><strong>Deadline record</strong><small>Return {returnDate} · warranty {warrantyDate}</small></p><b>READY</b></div></div><div className="message-preview"><span>SELLER MESSAGE</span><p>“The final documents do not match the benefits represented before purchase. Please review the attached evidence summary and resolve the highlighted discrepancies before the applicable deadline.”</p></div><button className="secondary" onClick={() => navigator.clipboard?.writeText('The final documents do not match the benefits represented before purchase. Please review the attached evidence summary and resolve the highlighted discrepancies before the applicable deadline.').then(() => flash('Seller message copied'))}>Copy seller message</button><button className="primary" onClick={downloadPack}>Download evidence pack <span>↓</span></button></section>}
+      {view === 'vault' && <section className="screen"><button className="back" onClick={() => setView('home')}>← Home</button><p className="eyebrow">LOCAL EVIDENCE VAULT</p><h2>Your purchase checks stay on this device.</h2><p className="intro">This prototype stores only case summaries in browser storage. Uploaded document files are not retained.</p>{savedCases.length ? <div className="vault-list">{savedCases.map((item) => <article key={item.id}><span>{item.score}</span><div><strong>{item.title}</strong><small>{item.createdAt} · {item.promises} promises</small></div><b>{item.issues} issues</b></article>)}</div> : <div className="empty-vault"><span>◇</span><strong>No saved checks yet</strong><small>Complete a promise-to-proof comparison to create one.</small></div>}<button className="primary" onClick={() => setView('capture')}>Start a new check <span>→</span></button></section>}
+      {view === 'suite' && <AdvancedTrustSuite language={language} onBack={() => setView('home')} onImportClaims={(text) => { setOfferText(text); addSource('image', 'Evidence Lens screenshot', 'User-confirmed visual claims'); setPromises(parsePromises(text, 'Evidence Lens screenshot')); setView('ledger'); flash('Screenshot claims added to the Promise Ledger'); }} />}
+      {processing && <div className="processing"><span /><strong>{processing}</strong><small>Local-first processing · user-selected evidence only</small></div>}{sourceOpen && <div className="modal" role="dialog" aria-modal="true"><div><button onClick={() => setSourceOpen('')}>×</button><p className="eyebrow">SOURCE-BOUND EVIDENCE</p><h3>Exact extracted clause</h3><blockquote data-no-translate>“{sourceOpen}”</blockquote><small>Linked to {proofName || 'the demo final document'} · extracted in this browser</small></div></div>}{toast && <div className="toast">✓ {toast}</div>}
+      <nav className="bottom-nav"><button className={view === 'home' ? 'active' : ''} onClick={() => setView('home')}><span>⌂</span>Home</button><button className={['capture','ledger','risk','proof','results','claim'].includes(view) ? 'active' : ''} onClick={() => setView('capture')}><span>＋</span>Check</button><button className={view === 'suite' ? 'active' : ''} onClick={() => setView('suite')}><span>◆</span>Suite</button><button className={view === 'vault' ? 'active' : ''} onClick={() => setView('vault')}><span>▤</span>Vault</button></nav>
+    </section><aside className="inspector"><p className="eyebrow">BUYSURE 2.0 · TEAM ANKOR</p><h2>From persuasive promise to portable proof.</h2><p className="side-copy">A consumer trust workflow designed for the moments before payment, after delivery, and before a claim deadline.</p><div className="workflow-map"><div className={activeStep <= 2 ? 'active' : ''}><span>01</span><p><strong>Promise Ledger</strong><small>Camera, voice, text and PDFs become user-confirmed obligations.</small></p></div><i>↓</i><div className={activeStep === 3 ? 'active' : ''}><span>02</span><p><strong>Explainable Risk</strong><small>Disclosure gaps become precise questions before payment.</small></p></div><i>↓</i><div className={activeStep === 4 || activeStep === 5 ? 'active' : ''}><span>03</span><p><strong>Evidence Reconciliation</strong><small>Final clauses are matched to each promise with confidence.</small></p></div><i>↓</i><div className={activeStep === 6 ? 'active' : ''}><span>04</span><p><strong>ClaimReady Action</strong><small>Deadlines, sources and contradictions become a portable pack.</small></p></div></div><div className="architecture"><span>PRIVACY-FIRST PIPELINE</span><div><b>Capture</b><i>→</i><b>Extract</b><i>→</i><b>Structure</b><i>→</i><b>Reconcile</b></div><small>PDF.js local text layer · deterministic claim rules · source-linked explanations · device-local case summaries</small></div><div className="capability-tags"><span>LIVE PDF PARSING</span><span>VOICE WHEN SUPPORTED</span><span>LOCAL VAULT</span><span>EXPORTABLE PACK</span></div><p className="honesty-note">Camera files are preserved as visual evidence and require user confirmation. Automated image OCR and official-source connectors are the next production integrations.</p><button className="restart" onClick={restart}>↻ Restart experience</button></aside></div>
+  </main></Translate>;
 }
